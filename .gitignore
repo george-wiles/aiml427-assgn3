@@ -1,0 +1,14 @@
+/tmp/
+/build/
+/target/
+scratch.*
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+*.DS_Store
+out
+.gradle
