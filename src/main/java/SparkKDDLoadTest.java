@@ -27,7 +27,8 @@ public class SparkKDDLoadTest {
 				.appName(appName)
 				//.master("local")
 				.getOrCreate();
-		Dataset<Row> df = spark.read().format("csv").load(filename);
+		Dataset<Row> df = spark.read().option("inferSchema", "true").format("csv").load(filename);
+
 		String[] featureCols = {
 				"duration","protocol_type","service","flag","src_bytes","dst_bytes",
 				"land","wrong_fragment","urgent","hot","num_failed_logins","logged_in",
@@ -50,8 +51,6 @@ public class SparkKDDLoadTest {
 				.setInputCol("label")
 				.setOutputCol("indexedLabel")
 				.fit(ds);
-
-		System.out.println(labelIndexer.labels());
 
 		VectorAssembler vectorAssembler = new VectorAssembler()
 				.setInputCols(featureCols)
