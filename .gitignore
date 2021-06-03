@@ -3,6 +3,7 @@
 /target/
 scratch.*
 /lib/
+**/*.class
 
 ### IntelliJ IDEA ###
 .idea

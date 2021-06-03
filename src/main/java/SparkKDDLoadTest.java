@@ -49,8 +49,9 @@ public class SparkKDDLoadTest {
 		// Fit on whole dataset to include all labels in index.
 		StringIndexerModel labelIndexer = new StringIndexer()
 				.setInputCol("label")
-				.setOutputCol("indexedLabel")
-				.fit(ds);
+				.setOutputCol("indexedLabel").fit(ds);
+
+		ds = labelIndexer.transform(ds);
 
 		VectorAssembler vectorAssembler = new VectorAssembler()
 				.setInputCols(featureCols)
@@ -68,7 +69,7 @@ public class SparkKDDLoadTest {
 				.setMaxIter(10) //Set maximum iterations
 				.setRegParam(0.3) //Set Lambda
 				.setFeaturesCol("features")
-				.setLabelCol("indexedLabel")
+                                .setLabelCol("indexedLabel")
 				.setElasticNetParam(0.8); //Set Alpha
 
 		// Fit the model
