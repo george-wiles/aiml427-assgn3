@@ -1,5 +1,9 @@
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.classification.LogisticRegressionModel;
+import org.apache.spark.ml.feature.StringIndexer;
+import org.apache.spark.ml.feature.StringIndexerModel;
+import org.apache.spark.ml.feature.VectorIndexer;
+import org.apache.spark.ml.feature.VectorIndexerModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -14,6 +18,8 @@ public class SparkKDDLoadTest {
 		if (args.length != 1) {
 			System.out.println("provide filename");
 			exit(0);
+		} else {
+			throw new RuntimeException("oooop[ppps");
 		}
 		String filename = args[0];
 
@@ -31,7 +37,23 @@ public class SparkKDDLoadTest {
 						"same_srv_rate","diff_srv_rate","srv_diff_host_rate","dst_host_count",
 						"dst_host_srv_count","dst_host_same_srv_rate","dst_host_diff_srv_rate",
 						"dst_host_same_src_port_rate","dst_host_srv_diff_host_rate","dst_host_serror_rate",
-						"dst_host_srv_serror_rate","dst_host_rerror_rate","dst_host_srv_rerror_rate","class");
+						"dst_host_srv_serror_rate","dst_host_rerror_rate","dst_host_srv_rerror_rate","label");
+
+		// Index labels, adding metadata to the label column.
+		// Fit on whole dataset to include all labels in index.
+		StringIndexerModel labelIndexer = new StringIndexer()
+				.setInputCol("label")
+				.setOutputCol("indexedLabel")
+				.fit(ds);
+
+		// Automatically identify categorical features, and index them.
+		VectorIndexerModel featureIndexer = new VectorIndexer()
+				.setInputCol("features")
+				.setOutputCol("indexedFeatures")
+				.setMaxCategories(4)
+				.fit(ds);
+
+		System.out.println("columns --> " + ds.columns());
 
 		//Create training and test set
 		Dataset<Row>[] splits = ds.randomSplit (new double[]{0.7,0.3},123);
