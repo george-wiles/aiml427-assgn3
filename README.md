@@ -2,6 +2,8 @@
 
 ## references
 * https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html
+* https://spark.apache.org/docs/2.2.0/ml-classification-regression.html#logistic-regression
+* https://spark.apache.org/docs/2.2.0/ml-classification-regression.html#decision-tree-classifier
 
 ## compile and run notes
 ```

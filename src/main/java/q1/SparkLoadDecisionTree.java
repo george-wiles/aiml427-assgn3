@@ -23,11 +23,12 @@ public class SparkLoadDecisionTree {
 	public static void main(String[] args) {
 		String appName = "q1.SparkKDDLoadTest";
 
-		if (args.length != 1) {
-			System.out.println("provide filename");
+		if (args.length != 2) {
+			System.out.println("provide input filename and random seed");
 			exit(0);
 		}
 		String filename = args[0];
+		Long randomSeed = Long.parseLong(args[1]);
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
@@ -74,7 +75,7 @@ public class SparkLoadDecisionTree {
 		Dataset<Row> scaledDs = scaler.fit(transformDs).transform(transformDs);
 
 		//Create training and test set
-		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},123);
+		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},randomSeed);
 		Dataset<Row> training = splits[0];
 		Dataset<Row> test = splits[1];
 
