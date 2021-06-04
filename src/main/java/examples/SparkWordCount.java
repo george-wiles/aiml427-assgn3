@@ -1,3 +1,5 @@
+package examples;
+
 import java.util.Arrays;
 
 import org.apache.spark.api.java.JavaPairRDD;
@@ -10,7 +12,7 @@ import scala.Tuple2;
 public class SparkWordCount {
 
     public static void main(String[] args) {
-        String appName = "SparkWordCount";
+        String appName = "examples.SparkWordCount";
 
         SparkSession spark = SparkSession.builder()
                 .appName(appName)

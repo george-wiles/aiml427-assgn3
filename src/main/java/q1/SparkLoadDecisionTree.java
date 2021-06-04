@@ -1,25 +1,27 @@
+package q1;
+
+import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.classification.LogisticRegressionModel;
-import org.apache.spark.ml.feature.*;
 import org.apache.spark.ml.feature.StandardScaler;
+import org.apache.spark.ml.feature.StringIndexer;
+import org.apache.spark.ml.feature.StringIndexerModel;
+import org.apache.spark.ml.feature.VectorAssembler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.functions;
-import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.lang.System.exit;
 
-public class SparkKDDLoadTest {
+public class SparkLoadDecisionTree {
 
 	public static void main(String[] args) {
-		String appName = "SparkKDDLoadTest";
+		String appName = "q1.SparkKDDLoadTest";
 
 		if (args.length != 1) {
 			System.out.println("provide filename");
@@ -78,7 +80,7 @@ public class SparkKDDLoadTest {
 
 		//Define the Logistic Regression instance
 		LogisticRegression lr = new LogisticRegression()
-				.setMaxIter(50) //Set maximum iterations
+				.setMaxIter(10) //Set maximum iterations
 				.setRegParam(0.3) //Set Lambda
 				.setFeaturesCol("features")
                                 .setLabelCol("indexedLabel")
@@ -125,24 +127,6 @@ public class SparkKDDLoadTest {
 		String trainF1=String.valueOf(maxFMeasure);
 		String f1Thresh=String.valueOf(bestThreshold);
 		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
-
-		/*
-			Make Predictions on our test set
-		*/
-		Dataset<Row> predictions_training = lrModel.transform(training);
-
-		// Select (prediction, true label) and compute test error.
-		MulticlassClassificationEvaluator evaluator = new MulticlassClassificationEvaluator()
-			.setLabelCol("indexedLabel")
-			.setPredictionCol("prediction")
-			.setMetricName("accuracy");
-
-		double accuracy_training = evaluator.evaluate(predictions_training);
-		System.out.println("Training Error = " + (1.0 - accuracy_training));
-
-		Dataset<Row> predictions_test = lrModel.transform(test);
-		double accuracy_test = evaluator.evaluate(predictions_test);
-		System.out.println("Test Error = " + (1.0 - accuracy_test));
 
 		/*
 		JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();

@@ -1,4 +1,4 @@
-/*
+package examples;/*
  * From http://everythingbigdata.blogspot.co.nz/2012/05/apache-hadoop-map-reduce-advanced.html
  * Derived from
  * Listing 4.1 from
