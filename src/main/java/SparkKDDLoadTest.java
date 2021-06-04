@@ -1,9 +1,11 @@
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.classification.LogisticRegressionModel;
 import org.apache.spark.ml.feature.*;
+import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -58,9 +60,17 @@ public class SparkKDDLoadTest {
 				.setOutputCol("features");
 		Dataset<Row> transformDs = vectorAssembler.transform(ds);
 
+		//Scale the features
+		StandardScaler scaler = new StandardScaler()
+				.setInputCol("features")
+				.setOutputCol("scaledFeatures")
+				.setWithStd(true)
+				.setWithMean(true);
+
+		Dataset<Row> scaledDs = scaler.fit(transformDs).transform(transformDs);
 
 		//Create training and test set
-		Dataset<Row>[] splits = transformDs.randomSplit (new double[]{0.7,0.3},123);
+		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},123);
 		Dataset<Row> training = splits[0];
 		Dataset<Row> test = splits[1];
 
