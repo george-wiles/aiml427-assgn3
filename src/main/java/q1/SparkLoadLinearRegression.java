@@ -30,6 +30,8 @@ public class SparkLoadLinearRegression {
 		String filename = args[0];
 		Long randomSeed = Long.parseLong(args[1]);
 
+		System.out.println("Random Seed: "+args[1]);
+
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
 				//.master("local")
