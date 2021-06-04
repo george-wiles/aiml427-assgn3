@@ -1,0 +1,942 @@
+Submitting kdd logistic regression to cluster with random seed 1
+21/06/05 09:06:54 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:06:54 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:06:54 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:06:54 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:06:54 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:06:54 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:06:54 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:06:54 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:06:55 INFO yarn.Client: Uploading resource file:/tmp/spark-f9efd6e5-cb45-41b1-94a6-04d650c553c9/__spark_libs__7198864721616941490.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0691/__spark_libs__7198864721616941490.zip
+21/06/05 09:06:56 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0691/skdd_lr.jar
+21/06/05 09:06:56 INFO yarn.Client: Uploading resource file:/tmp/spark-f9efd6e5-cb45-41b1-94a6-04d650c553c9/__spark_conf__3425486928238041890.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0691/__spark_conf__.zip
+21/06/05 09:06:56 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:06:56 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:06:56 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:06:56 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:06:56 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:06:56 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1438637169_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:06:56 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15385 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:06:57 INFO yarn.Client: Submitting application application_1617755808746_0691 to ResourceManager
+21/06/05 09:06:57 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0691
+21/06/05 09:06:58 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:06:58 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622840817622
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0691/
+	 user: knoxdavi
+21/06/05 09:06:59 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:07:00 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:07:01 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:07:02 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:07:03 INFO yarn.Client: Application report for application_1617755808746_0691 (state: ACCEPTED)
+21/06/05 09:07:04 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:04 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 40163
+	 queue: default
+	 start time: 1622840817622
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0691/
+	 user: knoxdavi
+21/06/05 09:07:05 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:06 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:07 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:08 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:09 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:10 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:11 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:12 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:13 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:14 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:15 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:16 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:17 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:18 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:19 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:20 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:21 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:22 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:23 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:24 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:25 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:26 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:27 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:28 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:29 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:30 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:31 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:32 INFO yarn.Client: Application report for application_1617755808746_0691 (state: RUNNING)
+21/06/05 09:07:33 INFO yarn.Client: Application report for application_1617755808746_0691 (state: FINISHED)
+21/06/05 09:07:33 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 40163
+	 queue: default
+	 start time: 1622840817622
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0691/
+	 user: knoxdavi
+21/06/05 09:07:33 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:07:33 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-f9efd6e5-cb45-41b1-94a6-04d650c553c9
+21/06/05 09:07:33 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-23136105-4c9b-43f2-b823-5f3008a48465
+Completed kdd logistic regression on cluster with random seed 1
+Submitting kdd logistic regression to cluster with random seed 2
+21/06/05 09:07:38 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:07:39 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:07:39 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:07:39 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:07:39 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:07:39 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:07:39 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:07:39 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:07:39 INFO yarn.Client: Uploading resource file:/tmp/spark-e4862bd8-feeb-4f9c-a979-c2cc6aa2b2d9/__spark_libs__5645763040461050495.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0692/__spark_libs__5645763040461050495.zip
+21/06/05 09:07:40 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0692/skdd_lr.jar
+21/06/05 09:07:40 INFO yarn.Client: Uploading resource file:/tmp/spark-e4862bd8-feeb-4f9c-a979-c2cc6aa2b2d9/__spark_conf__3016683038465674289.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0692/__spark_conf__.zip
+21/06/05 09:07:40 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:07:40 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:07:40 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:07:40 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:07:40 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:07:40 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-879044447_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:07:40 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15386 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:07:41 INFO yarn.Client: Submitting application application_1617755808746_0692 to ResourceManager
+21/06/05 09:07:41 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0692
+21/06/05 09:07:42 INFO yarn.Client: Application report for application_1617755808746_0692 (state: ACCEPTED)
+21/06/05 09:07:42 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622840861538
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0692/
+	 user: knoxdavi
+21/06/05 09:07:43 INFO yarn.Client: Application report for application_1617755808746_0692 (state: ACCEPTED)
+21/06/05 09:07:44 INFO yarn.Client: Application report for application_1617755808746_0692 (state: ACCEPTED)
+21/06/05 09:07:45 INFO yarn.Client: Application report for application_1617755808746_0692 (state: ACCEPTED)
+21/06/05 09:07:46 INFO yarn.Client: Application report for application_1617755808746_0692 (state: ACCEPTED)
+21/06/05 09:07:47 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:47 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39331
+	 queue: default
+	 start time: 1622840861538
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0692/
+	 user: knoxdavi
+21/06/05 09:07:48 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:49 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:50 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:51 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:52 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:53 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:54 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:55 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:56 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:57 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:58 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:07:59 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:00 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:01 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:02 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:03 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:04 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:05 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:06 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:07 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:08 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:09 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:10 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:11 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:12 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:13 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:14 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:15 INFO yarn.Client: Application report for application_1617755808746_0692 (state: RUNNING)
+21/06/05 09:08:16 INFO yarn.Client: Application report for application_1617755808746_0692 (state: FINISHED)
+21/06/05 09:08:16 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39331
+	 queue: default
+	 start time: 1622840861538
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0692/
+	 user: knoxdavi
+21/06/05 09:08:16 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:08:16 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-e4862bd8-feeb-4f9c-a979-c2cc6aa2b2d9
+21/06/05 09:08:16 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ed526e1b-0990-4fff-88ce-29aff0fcf6d7
+Completed kdd logistic regression on cluster with random seed 2
+Submitting kdd logistic regression to cluster with random seed 3
+21/06/05 09:08:21 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:08:22 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:08:22 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:08:22 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:08:22 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:08:22 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:08:22 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:08:22 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:08:22 INFO yarn.Client: Uploading resource file:/tmp/spark-9131371d-daf0-4256-9f72-74eb415d14eb/__spark_libs__7674811689397320220.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0693/__spark_libs__7674811689397320220.zip
+21/06/05 09:08:23 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0693/skdd_lr.jar
+21/06/05 09:08:23 INFO yarn.Client: Uploading resource file:/tmp/spark-9131371d-daf0-4256-9f72-74eb415d14eb/__spark_conf__2182183654708842815.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0693/__spark_conf__.zip
+21/06/05 09:08:23 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:08:23 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:08:23 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:08:23 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:08:23 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:08:23 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-798093652_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:08:23 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15387 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:08:24 INFO yarn.Client: Submitting application application_1617755808746_0693 to ResourceManager
+21/06/05 09:08:24 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0693
+21/06/05 09:08:25 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:25 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622840904437
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0693/
+	 user: knoxdavi
+21/06/05 09:08:26 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:27 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:28 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:29 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:30 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:31 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:32 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:33 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:34 INFO yarn.Client: Application report for application_1617755808746_0693 (state: ACCEPTED)
+21/06/05 09:08:35 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:35 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39959
+	 queue: default
+	 start time: 1622840904437
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0693/
+	 user: knoxdavi
+21/06/05 09:08:36 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:37 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:38 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:39 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:40 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:41 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:42 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:43 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:44 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:45 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:46 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:47 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:48 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:49 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:50 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:51 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:52 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:53 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:54 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:55 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:56 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:57 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:58 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:08:59 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:00 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:01 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:02 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:03 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:04 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:05 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:06 INFO yarn.Client: Application report for application_1617755808746_0693 (state: RUNNING)
+21/06/05 09:09:07 INFO yarn.Client: Application report for application_1617755808746_0693 (state: FINISHED)
+21/06/05 09:09:07 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39959
+	 queue: default
+	 start time: 1622840904437
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0693/
+	 user: knoxdavi
+21/06/05 09:09:07 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:09:07 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-43531989-a90d-4080-b062-78f73cb47fc7
+21/06/05 09:09:07 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9131371d-daf0-4256-9f72-74eb415d14eb
+Completed kdd logistic regression on cluster with random seed 3
+Submitting kdd logistic regression to cluster with random seed 4
+21/06/05 09:09:12 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:09:12 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:09:13 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:09:13 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:09:13 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:09:13 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:09:13 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:09:13 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:09:13 INFO yarn.Client: Uploading resource file:/tmp/spark-c68d1c2d-f5c3-4899-8979-a5ea6fa258e0/__spark_libs__3334471763075742427.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0694/__spark_libs__3334471763075742427.zip
+21/06/05 09:09:14 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0694/skdd_lr.jar
+21/06/05 09:09:14 INFO yarn.Client: Uploading resource file:/tmp/spark-c68d1c2d-f5c3-4899-8979-a5ea6fa258e0/__spark_conf__578983208038264300.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0694/__spark_conf__.zip
+21/06/05 09:09:14 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:09:14 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:09:14 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:09:14 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:09:14 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:09:14 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_2058580470_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:09:14 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15388 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:09:15 INFO yarn.Client: Submitting application application_1617755808746_0694 to ResourceManager
+21/06/05 09:09:15 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0694
+21/06/05 09:09:16 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:16 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622840955325
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0694/
+	 user: knoxdavi
+21/06/05 09:09:17 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:18 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:19 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:20 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:21 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:22 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:23 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:24 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:25 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:26 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:27 INFO yarn.Client: Application report for application_1617755808746_0694 (state: ACCEPTED)
+21/06/05 09:09:28 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:28 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 43453
+	 queue: default
+	 start time: 1622840955325
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0694/
+	 user: knoxdavi
+21/06/05 09:09:29 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:30 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:31 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:32 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:33 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:34 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:35 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:36 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:37 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:38 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:39 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:40 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:41 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:42 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:43 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:44 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:45 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:46 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:47 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:48 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:49 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:50 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:51 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:52 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:53 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:54 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:55 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:56 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:57 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:58 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:09:59 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:00 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:01 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:02 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:03 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:04 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:05 INFO yarn.Client: Application report for application_1617755808746_0694 (state: RUNNING)
+21/06/05 09:10:06 INFO yarn.Client: Application report for application_1617755808746_0694 (state: FINISHED)
+21/06/05 09:10:06 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 43453
+	 queue: default
+	 start time: 1622840955325
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0694/
+	 user: knoxdavi
+21/06/05 09:10:06 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:10:06 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-bd68bcc0-f6e5-497c-8ed5-deb3c6422c81
+21/06/05 09:10:06 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-c68d1c2d-f5c3-4899-8979-a5ea6fa258e0
+Completed kdd logistic regression on cluster with random seed 4
+Submitting kdd logistic regression to cluster with random seed 5
+21/06/05 09:10:11 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:10:11 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:10:11 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:10:11 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:10:11 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:10:11 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:10:11 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:10:11 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:10:12 INFO yarn.Client: Uploading resource file:/tmp/spark-2991f57b-27bc-4480-befb-f9a62164692b/__spark_libs__7676259549728654512.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0695/__spark_libs__7676259549728654512.zip
+21/06/05 09:10:13 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0695/skdd_lr.jar
+21/06/05 09:10:13 INFO yarn.Client: Uploading resource file:/tmp/spark-2991f57b-27bc-4480-befb-f9a62164692b/__spark_conf__2073426333253670950.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0695/__spark_conf__.zip
+21/06/05 09:10:13 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:10:13 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:10:13 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:10:13 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:10:13 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:10:13 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1728910114_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:10:13 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15389 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:10:14 INFO yarn.Client: Submitting application application_1617755808746_0695 to ResourceManager
+21/06/05 09:10:14 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0695
+21/06/05 09:10:15 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:15 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841014331
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0695/
+	 user: knoxdavi
+21/06/05 09:10:16 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:17 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:18 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:19 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:20 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:21 INFO yarn.Client: Application report for application_1617755808746_0695 (state: ACCEPTED)
+21/06/05 09:10:22 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:22 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-6.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 33291
+	 queue: default
+	 start time: 1622841014331
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0695/
+	 user: knoxdavi
+21/06/05 09:10:23 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:24 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:25 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:26 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:27 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:28 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:29 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:30 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:31 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:32 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:33 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:34 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:35 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:36 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:37 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:38 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:39 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:40 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:41 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:42 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:43 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:44 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:45 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:46 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:47 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:48 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:49 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:50 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:51 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:52 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:53 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:54 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:55 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:56 INFO yarn.Client: Application report for application_1617755808746_0695 (state: RUNNING)
+21/06/05 09:10:57 INFO yarn.Client: Application report for application_1617755808746_0695 (state: FINISHED)
+21/06/05 09:10:57 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-6.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 33291
+	 queue: default
+	 start time: 1622841014331
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0695/
+	 user: knoxdavi
+21/06/05 09:10:57 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:10:57 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-2991f57b-27bc-4480-befb-f9a62164692b
+21/06/05 09:10:57 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ac28f45f-803b-4456-8ea5-2f5920926edb
+Completed kdd logistic regression on cluster with random seed 5
+Submitting kdd logistic regression to cluster with random seed 6
+21/06/05 09:11:02 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:11:02 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:11:02 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:11:02 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:11:02 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:11:02 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:11:02 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:11:03 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:11:03 INFO yarn.Client: Uploading resource file:/tmp/spark-aea4c5e9-9b48-4596-9e0a-6ec1ae36c0bc/__spark_libs__8031608274708581722.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0696/__spark_libs__8031608274708581722.zip
+21/06/05 09:11:04 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0696/skdd_lr.jar
+21/06/05 09:11:04 INFO yarn.Client: Uploading resource file:/tmp/spark-aea4c5e9-9b48-4596-9e0a-6ec1ae36c0bc/__spark_conf__9008083547976032602.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0696/__spark_conf__.zip
+21/06/05 09:11:04 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:11:04 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:11:04 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:11:04 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:11:04 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:11:04 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_209821442_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:11:04 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15390 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:11:05 INFO yarn.Client: Submitting application application_1617755808746_0696 to ResourceManager
+21/06/05 09:11:05 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0696
+21/06/05 09:11:06 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:06 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841065413
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0696/
+	 user: knoxdavi
+21/06/05 09:11:07 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:08 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:09 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:10 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:11 INFO yarn.Client: Application report for application_1617755808746_0696 (state: ACCEPTED)
+21/06/05 09:11:12 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:12 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-2.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 43809
+	 queue: default
+	 start time: 1622841065413
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0696/
+	 user: knoxdavi
+21/06/05 09:11:13 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:14 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:15 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:16 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:17 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:18 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:19 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:20 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:21 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:22 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:23 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:24 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:25 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:26 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:27 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:28 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:29 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:30 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:31 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:32 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:33 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:34 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:35 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:36 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:37 INFO yarn.Client: Application report for application_1617755808746_0696 (state: RUNNING)
+21/06/05 09:11:38 INFO yarn.Client: Application report for application_1617755808746_0696 (state: FINISHED)
+21/06/05 09:11:38 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-2.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 43809
+	 queue: default
+	 start time: 1622841065413
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0696/
+	 user: knoxdavi
+21/06/05 09:11:38 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:11:38 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-0dd5725a-304e-4c48-aa72-b9a39fc59d59
+21/06/05 09:11:38 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-aea4c5e9-9b48-4596-9e0a-6ec1ae36c0bc
+Completed kdd logistic regression on cluster with random seed 6
+Submitting kdd logistic regression to cluster with random seed 7
+21/06/05 09:11:43 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:11:43 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:11:44 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:11:44 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:11:44 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:11:44 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:11:44 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:11:44 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:11:44 INFO yarn.Client: Uploading resource file:/tmp/spark-cc4a2553-ddf5-48ef-a528-9fc65801ca71/__spark_libs__4397113554994997227.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0697/__spark_libs__4397113554994997227.zip
+21/06/05 09:11:45 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0697/skdd_lr.jar
+21/06/05 09:11:45 INFO yarn.Client: Uploading resource file:/tmp/spark-cc4a2553-ddf5-48ef-a528-9fc65801ca71/__spark_conf__4511248974126424324.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0697/__spark_conf__.zip
+21/06/05 09:11:45 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:11:45 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:11:45 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:11:45 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:11:45 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:11:45 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1235383521_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:11:45 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15391 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:11:46 INFO yarn.Client: Submitting application application_1617755808746_0697 to ResourceManager
+21/06/05 09:11:46 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0697
+21/06/05 09:11:47 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:47 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841106307
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0697/
+	 user: knoxdavi
+21/06/05 09:11:48 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:49 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:50 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:51 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:52 INFO yarn.Client: Application report for application_1617755808746_0697 (state: ACCEPTED)
+21/06/05 09:11:53 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:53 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-6.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 40977
+	 queue: default
+	 start time: 1622841106307
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0697/
+	 user: knoxdavi
+21/06/05 09:11:54 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:55 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:56 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:57 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:58 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:11:59 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:00 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:01 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:02 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:03 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:04 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:05 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:06 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:07 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:08 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:09 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:10 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:11 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:12 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:13 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:14 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:15 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:16 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:17 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:18 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:19 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:20 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:21 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:22 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:23 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:24 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:25 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:26 INFO yarn.Client: Application report for application_1617755808746_0697 (state: RUNNING)
+21/06/05 09:12:27 INFO yarn.Client: Application report for application_1617755808746_0697 (state: FINISHED)
+21/06/05 09:12:27 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-6.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 40977
+	 queue: default
+	 start time: 1622841106307
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0697/
+	 user: knoxdavi
+21/06/05 09:12:27 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:12:27 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-4066c376-e531-4260-977e-a74ceb89eab2
+21/06/05 09:12:27 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-cc4a2553-ddf5-48ef-a528-9fc65801ca71
+Completed kdd logistic regression on cluster with random seed 7
+Submitting kdd logistic regression to cluster with random seed 8
+21/06/05 09:12:32 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:12:32 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:12:32 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:12:32 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:12:32 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:12:32 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:12:32 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:12:32 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:12:33 INFO yarn.Client: Uploading resource file:/tmp/spark-581b8f2e-b9d2-4adc-97e5-7a9501c5298b/__spark_libs__7733305184630133879.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0698/__spark_libs__7733305184630133879.zip
+21/06/05 09:12:34 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0698/skdd_lr.jar
+21/06/05 09:12:34 INFO yarn.Client: Uploading resource file:/tmp/spark-581b8f2e-b9d2-4adc-97e5-7a9501c5298b/__spark_conf__2537512271466761356.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0698/__spark_conf__.zip
+21/06/05 09:12:34 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:12:34 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:12:34 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:12:34 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:12:34 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:12:34 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-326950440_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:12:34 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15392 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:12:35 INFO yarn.Client: Submitting application application_1617755808746_0698 to ResourceManager
+21/06/05 09:12:35 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0698
+21/06/05 09:12:36 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:36 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841155263
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0698/
+	 user: knoxdavi
+21/06/05 09:12:37 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:38 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:39 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:40 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:41 INFO yarn.Client: Application report for application_1617755808746_0698 (state: ACCEPTED)
+21/06/05 09:12:42 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:42 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 32867
+	 queue: default
+	 start time: 1622841155263
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0698/
+	 user: knoxdavi
+21/06/05 09:12:43 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:44 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:45 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:46 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:47 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:48 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:49 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:50 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:51 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:52 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:53 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:54 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:55 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:56 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:57 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:58 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:12:59 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:00 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:01 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:02 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:03 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:04 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:05 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:06 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:07 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:08 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:09 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:10 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:11 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:12 INFO yarn.Client: Application report for application_1617755808746_0698 (state: RUNNING)
+21/06/05 09:13:13 INFO yarn.Client: Application report for application_1617755808746_0698 (state: FINISHED)
+21/06/05 09:13:13 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 32867
+	 queue: default
+	 start time: 1622841155263
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0698/
+	 user: knoxdavi
+21/06/05 09:13:13 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:13:13 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-7af2e1a8-a1fa-4ac4-acf6-ee3dd7a68069
+21/06/05 09:13:13 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-581b8f2e-b9d2-4adc-97e5-7a9501c5298b
+Completed kdd logistic regression on cluster with random seed 8
+Submitting kdd logistic regression to cluster with random seed 9
+21/06/05 09:13:18 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:13:18 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:13:18 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:13:18 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:13:18 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:13:18 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:13:18 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:13:18 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:13:19 INFO yarn.Client: Uploading resource file:/tmp/spark-034da0b2-9d67-4e5f-9ccb-db82b706d8d0/__spark_libs__6592696951456048893.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0699/__spark_libs__6592696951456048893.zip
+21/06/05 09:13:20 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0699/skdd_lr.jar
+21/06/05 09:13:20 INFO yarn.Client: Uploading resource file:/tmp/spark-034da0b2-9d67-4e5f-9ccb-db82b706d8d0/__spark_conf__7079546762874917474.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0699/__spark_conf__.zip
+21/06/05 09:13:20 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:13:20 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:13:20 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:13:20 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:13:20 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:13:20 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1193750318_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:13:20 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15393 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:13:21 INFO yarn.Client: Submitting application application_1617755808746_0699 to ResourceManager
+21/06/05 09:13:21 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0699
+21/06/05 09:13:22 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:22 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841201137
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0699/
+	 user: knoxdavi
+21/06/05 09:13:23 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:24 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:25 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:26 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:27 INFO yarn.Client: Application report for application_1617755808746_0699 (state: ACCEPTED)
+21/06/05 09:13:28 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:28 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 46589
+	 queue: default
+	 start time: 1622841201137
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0699/
+	 user: knoxdavi
+21/06/05 09:13:29 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:30 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:31 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:32 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:33 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:34 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:35 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:36 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:37 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:38 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:39 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:40 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:41 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:42 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:43 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:44 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:45 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:46 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:47 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:48 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:49 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:50 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:51 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:52 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:53 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:54 INFO yarn.Client: Application report for application_1617755808746_0699 (state: RUNNING)
+21/06/05 09:13:55 INFO yarn.Client: Application report for application_1617755808746_0699 (state: FINISHED)
+21/06/05 09:13:55 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 46589
+	 queue: default
+	 start time: 1622841201137
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0699/
+	 user: knoxdavi
+21/06/05 09:13:55 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:13:55 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-a6097d25-7250-470c-b03d-500b1b015048
+21/06/05 09:13:55 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-034da0b2-9d67-4e5f-9ccb-db82b706d8d0
+Completed kdd logistic regression on cluster with random seed 9
+Submitting kdd logistic regression to cluster with random seed 10
+21/06/05 09:14:00 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/05 09:14:00 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/05 09:14:00 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/05 09:14:00 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/05 09:14:00 INFO yarn.Client: Setting up container launch context for our AM
+21/06/05 09:14:00 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/05 09:14:00 INFO yarn.Client: Preparing resources for our AM container
+21/06/05 09:14:00 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/05 09:14:01 INFO yarn.Client: Uploading resource file:/tmp/spark-869b64e2-d80f-4607-b725-5ce7e1811274/__spark_libs__2541416019324932150.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0700/__spark_libs__2541416019324932150.zip
+21/06/05 09:14:01 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_lr.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0700/skdd_lr.jar
+21/06/05 09:14:02 INFO yarn.Client: Uploading resource file:/tmp/spark-869b64e2-d80f-4607-b725-5ce7e1811274/__spark_conf__357174805868864937.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0700/__spark_conf__.zip
+21/06/05 09:14:02 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/05 09:14:02 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/05 09:14:02 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/05 09:14:02 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/05 09:14:02 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/05 09:14:02 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1493045356_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/05 09:14:02 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15394 for knoxdavi on 130.195.4.140:9000
+21/06/05 09:14:02 INFO yarn.Client: Submitting application application_1617755808746_0700 to ResourceManager
+21/06/05 09:14:03 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0700
+21/06/05 09:14:04 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:04 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622841242935
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0700/
+	 user: knoxdavi
+21/06/05 09:14:05 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:06 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:07 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:08 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:09 INFO yarn.Client: Application report for application_1617755808746_0700 (state: ACCEPTED)
+21/06/05 09:14:10 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:10 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 36901
+	 queue: default
+	 start time: 1622841242935
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0700/
+	 user: knoxdavi
+21/06/05 09:14:11 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:12 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:13 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:14 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:15 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:16 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:17 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:18 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:19 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:20 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:21 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:22 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:23 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:24 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:25 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:26 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:27 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:28 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:29 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:30 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:31 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:32 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:33 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:34 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:35 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:36 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:37 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:38 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:39 INFO yarn.Client: Application report for application_1617755808746_0700 (state: RUNNING)
+21/06/05 09:14:40 INFO yarn.Client: Application report for application_1617755808746_0700 (state: FINISHED)
+21/06/05 09:14:40 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 36901
+	 queue: default
+	 start time: 1622841242935
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0700/
+	 user: knoxdavi
+21/06/05 09:14:40 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/05 09:14:40 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-869b64e2-d80f-4607-b725-5ce7e1811274
+21/06/05 09:14:40 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-97146f89-650d-4d88-8235-c3bfb409fd75
+Completed kdd logistic regression on cluster with random seed 10
+done.
