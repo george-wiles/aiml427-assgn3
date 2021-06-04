@@ -1,8 +1,6 @@
 package q1;
 
-import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
-import org.apache.spark.ml.classification.LogisticRegression;
-import org.apache.spark.ml.classification.LogisticRegressionModel;
+import org.apache.spark.ml.classification.DecisionTreeClassifier;
 import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.ml.feature.StringIndexer;
 import org.apache.spark.ml.feature.StringIndexerModel;
@@ -10,7 +8,6 @@ import org.apache.spark.ml.feature.VectorAssembler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.functions;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -19,6 +16,7 @@ import java.util.List;
 import static java.lang.System.exit;
 
 public class SparkLoadDecisionTree {
+
 
 	public static void main(String[] args) {
 		String appName = "q1.SparkKDDLoadTest";
@@ -79,18 +77,11 @@ public class SparkLoadDecisionTree {
 		Dataset<Row> test = splits[1];
 
 		//Define the Logistic Regression instance
-		LogisticRegression lr = new LogisticRegression()
-				.setMaxIter(10) //Set maximum iterations
-				.setRegParam(0.3) //Set Lambda
+		DecisionTreeClassifier dtc = new DecisionTreeClassifier()
 				.setFeaturesCol("features")
-                                .setLabelCol("indexedLabel")
-				.setElasticNetParam(0.8); //Set Alpha
+				.setLabelCol("indexedLabel");
 
-		// Fit the model
-		LogisticRegressionModel lrModel = lr.fit(training);
-		System.out.println("	logistic regression model coefficients:");
-		System.out.println("Coefficients: "
-				+ lrModel.coefficients() + " Intercept: " + lrModel.intercept());
+		dtc.fit(training);
 
 
 		/*
@@ -98,55 +89,54 @@ public class SparkLoadDecisionTree {
 			codes from here: AIML427 Week11-12:24
 		*/
 		// Extract the summary from the returned model
-		BinaryLogisticRegressionTrainingSummary trainingSummary = lrModel.binarySummary();
-		// Obtain the loss per iteration.
-		System.out.println("	Training LOSS per iteration");
-		double[] objectiveHistory = trainingSummary.objectiveHistory();
-		for (double lossPerIteration : objectiveHistory) {
-			System.out.println(lossPerIteration);
-		}
+//		BinaryLogisticRegressionTrainingSummary trainingSummary = dtc.
+//		// Obtain the loss per iteration.
+//		System.out.println("	Training LOSS per iteration");
+//		double[] objectiveHistory = trainingSummary.objectiveHistory();
+//		for (double lossPerIteration : objectiveHistory) {
+//			System.out.println(lossPerIteration);
+//		}
+//
+//		// Obtain the ROC as a dataframe and areaUnderROC.
+//		Dataset<Row> roc = trainingSummary.roc();
+//		roc.show();
+//		roc.select("FPR").show();
+//		System.out.println("	Area under ROC:");
+//		System.out.println(trainingSummary.areaUnderROC());
+//
+//		// Get the threshold corresponding to the maximum F-Measure
+//		Dataset<Row> fMeasure = trainingSummary.fMeasureByThreshold();
+//		//double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
+//		double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
+//		double bestThreshold = fMeasure.where(fMeasure.col("F-Measure").equalTo(maxFMeasure))
+//				.select("threshold")
+//				.head()
+//				.getDouble(0);
+//		//set this selected threshold for the model.
+//		lrModel.setThreshold(bestThreshold);
+//
+//		String trainF1=String.valueOf(maxFMeasure);
+//		String f1Thresh=String.valueOf(bestThreshold);
+//		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
+//
+//		/*
+//			Make Predictions on our test set
+//		*/
+//		Dataset<Row> predictions_training = lrModel.transform(training);
+//
+//		// Select (prediction, true label) and compute test error.
+//		MulticlassClassificationEvaluator evaluator = new MulticlassClassificationEvaluator()
+//				.setLabelCol("indexedLabel")
+//				.setPredictionCol("prediction")
+//				.setMetricName("accuracy");
+//
+//		double accuracy_training = evaluator.evaluate(predictions_training);
+//		System.out.println("Training Error = " + (1.0 - accuracy_training));
+//
+//		Dataset<Row> predictions_test = lrModel.transform(test);
+//		double accuracy_test = evaluator.evaluate(predictions_test);
+//		System.out.println("Test Error = " + (1.0 - accuracy_test));
 
-		// Obtain the ROC as a dataframe and areaUnderROC.
-		Dataset<Row> roc = trainingSummary.roc();
-		roc.show();
-		roc.select("FPR").show();
-		System.out.println("	Area under ROC:");
-		System.out.println(trainingSummary.areaUnderROC());
-
-		// Get the threshold corresponding to the maximum F-Measure
-		Dataset<Row> fMeasure = trainingSummary.fMeasureByThreshold();
-		//double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
-		double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
-		double bestThreshold = fMeasure.where(fMeasure.col("F-Measure").equalTo(maxFMeasure))
-			.select("threshold")
-			.head()
-			.getDouble(0);
-		//set this selected threshold for the model.
-		lrModel.setThreshold(bestThreshold);
-
-		String trainF1=String.valueOf(maxFMeasure);
-		String f1Thresh=String.valueOf(bestThreshold);
-		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
-
-		/*
-		JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();
-		JavaPairRDD<String, Integer> records = 
-				lines
-				.flatMap(s -> Arrays.asList(s.split(" ")).iterator())
-				.mapToPair(word -> new Tuple2<String, Integer>(word, 1))
-				.reduceByKey((x,y) -> x+y);
-		*/
-		//records = records.sortByKey(true);
-		//JavaRDD<String> formatted = records.map( new  Function<Tuple2<String,Integer>, String>() 
-		//{
-		//
-		//	@Override
-		//	public String call(Tuple2<String, Integer> theTuple) throws  Exception { 
-		//		return  theTuple._1() +  " appears "  + theTuple._2();
-		//	} 
-		//});
-		
-		//records.repartition(1).saveAsTextFile(args[1]);
 	}
 }
 
