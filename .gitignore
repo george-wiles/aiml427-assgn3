@@ -2,6 +2,8 @@
 /build/
 /target/
 scratch.*
+/lib/
+**/*.class
 
 ### IntelliJ IDEA ###
 .idea
