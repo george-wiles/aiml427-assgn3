@@ -1,6 +1,8 @@
 package q1;
 
+import org.apache.spark.ml.classification.DecisionTreeClassificationModel;
 import org.apache.spark.ml.classification.DecisionTreeClassifier;
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.ml.feature.StringIndexer;
 import org.apache.spark.ml.feature.StringIndexerModel;
@@ -81,61 +83,22 @@ public class SparkLoadDecisionTree {
 				.setFeaturesCol("features")
 				.setLabelCol("indexedLabel");
 
-		dtc.fit(training);
+		DecisionTreeClassificationModel dtModel = dtc.fit(training);
 
+		Dataset<Row> predictions_training = dtModel.transform(training);
 
-		/*
-			Model Stats
-			codes from here: AIML427 Week11-12:24
-		*/
-		// Extract the summary from the returned model
-//		BinaryLogisticRegressionTrainingSummary trainingSummary = dtc.
-//		// Obtain the loss per iteration.
-//		System.out.println("	Training LOSS per iteration");
-//		double[] objectiveHistory = trainingSummary.objectiveHistory();
-//		for (double lossPerIteration : objectiveHistory) {
-//			System.out.println(lossPerIteration);
-//		}
-//
-//		// Obtain the ROC as a dataframe and areaUnderROC.
-//		Dataset<Row> roc = trainingSummary.roc();
-//		roc.show();
-//		roc.select("FPR").show();
-//		System.out.println("	Area under ROC:");
-//		System.out.println(trainingSummary.areaUnderROC());
-//
-//		// Get the threshold corresponding to the maximum F-Measure
-//		Dataset<Row> fMeasure = trainingSummary.fMeasureByThreshold();
-//		//double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
-//		double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
-//		double bestThreshold = fMeasure.where(fMeasure.col("F-Measure").equalTo(maxFMeasure))
-//				.select("threshold")
-//				.head()
-//				.getDouble(0);
-//		//set this selected threshold for the model.
-//		lrModel.setThreshold(bestThreshold);
-//
-//		String trainF1=String.valueOf(maxFMeasure);
-//		String f1Thresh=String.valueOf(bestThreshold);
-//		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
-//
-//		/*
-//			Make Predictions on our test set
-//		*/
-//		Dataset<Row> predictions_training = lrModel.transform(training);
-//
-//		// Select (prediction, true label) and compute test error.
-//		MulticlassClassificationEvaluator evaluator = new MulticlassClassificationEvaluator()
-//				.setLabelCol("indexedLabel")
-//				.setPredictionCol("prediction")
-//				.setMetricName("accuracy");
-//
-//		double accuracy_training = evaluator.evaluate(predictions_training);
-//		System.out.println("Training Error = " + (1.0 - accuracy_training));
-//
-//		Dataset<Row> predictions_test = lrModel.transform(test);
-//		double accuracy_test = evaluator.evaluate(predictions_test);
-//		System.out.println("Test Error = " + (1.0 - accuracy_test));
+		MulticlassClassificationEvaluator evaluator = new MulticlassClassificationEvaluator()
+				.setLabelCol("indexedLabel")
+				.setPredictionCol("prediction")
+				.setMetricName("accuracy");
+
+		double accuracy_training = evaluator.evaluate(predictions_training);
+		System.out.println("Training Error = " + (1.0 - accuracy_training));
+
+		Dataset<Row> predictions_test = dtModel.transform(test);
+		double accuracy_test = evaluator.evaluate(predictions_test);
+		System.out.println("Test Error = " + (1.0 - accuracy_test));
+
 
 	}
 }
