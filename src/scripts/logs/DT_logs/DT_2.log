@@ -1,0 +1,4 @@
+http://co246a-4.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_0702_01_000001/knoxdavi/stdout/?start=-4096
+Random Seed: 2
+Training Error = 0.048243126250111956
+Test Error = 0.04944167427487889
