@@ -5,6 +5,9 @@ import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.functions;
+import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
+
 
 
 import java.util.Arrays;
@@ -84,8 +87,45 @@ public class SparkKDDLoadTest {
 
 		// Fit the model
 		LogisticRegressionModel lrModel = lr.fit(training);
+		System.out.println("	logistic regression model coefficients:");
 		System.out.println("Coefficients: "
 				+ lrModel.coefficients() + " Intercept: " + lrModel.intercept());
+
+
+		/*
+			Model Stats
+			codes from here: AIML427 Week11-12:24
+		*/
+		// Extract the summary from the returned model
+		BinaryLogisticRegressionTrainingSummary trainingSummary = lrModel.binarySummary();
+		// Obtain the loss per iteration.
+		System.out.println("	Training LOSS per iteration");
+		double[] objectiveHistory = trainingSummary.objectiveHistory();
+		for (double lossPerIteration : objectiveHistory) {
+			System.out.println(lossPerIteration);
+		}
+
+		// Obtain the ROC as a dataframe and areaUnderROC.
+		Dataset<Row> roc = trainingSummary.roc();
+		roc.show();
+		roc.select("FPR").show();
+		System.out.println("	Area under ROC:");
+		System.out.println(trainingSummary.areaUnderROC());
+
+		// Get the threshold corresponding to the maximum F-Measure
+		Dataset<Row> fMeasure = trainingSummary.fMeasureByThreshold();
+		//double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
+		double maxFMeasure = fMeasure.select(functions.max("F-Measure")).head().getDouble(0);
+		double bestThreshold = fMeasure.where(fMeasure.col("F-Measure").equalTo(maxFMeasure))
+			.select("threshold")
+			.head()
+			.getDouble(0);
+		//set this selected threshold for the model.
+		lrModel.setThreshold(bestThreshold);
+
+		String trainF1=String.valueOf(maxFMeasure);
+		String f1Thresh=String.valueOf(bestThreshold);
+		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
 
 		/*
 		JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();
