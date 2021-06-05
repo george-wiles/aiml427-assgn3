@@ -1,20 +1,18 @@
 package q1;
 
+import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.classification.LogisticRegressionModel;
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 import org.apache.spark.ml.feature.*;
-import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.functions;
-import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.lang.System.exit;
 
@@ -58,7 +56,8 @@ public class SparkLoadLinearRegression {
 		// Fit on whole dataset to include all labels in index.
 		StringIndexerModel labelIndexer = new StringIndexer()
 				.setInputCol("label")
-				.setOutputCol("indexedLabel").fit(ds);
+				.setOutputCol("indexedLabel")
+				.fit(ds);
 
 		ds = labelIndexer.transform(ds);
 
@@ -67,14 +66,21 @@ public class SparkLoadLinearRegression {
 				.setOutputCol("features");
 		Dataset<Row> transformDs = vectorAssembler.transform(ds);
 
+		VectorIndexerModel featureIndexer = new VectorIndexer()
+				.setInputCol("features").setOutputCol("indexedFeatures")
+				.setMaxCategories(12)
+				.fit(transformDs);
+
+		Dataset<Row> indexedDs = featureIndexer.transform(transformDs);
+
 		//Scale the features
 		StandardScaler scaler = new StandardScaler()
-				.setInputCol("features")
+				.setInputCol("indexedFeatures")
 				.setOutputCol("scaledFeatures")
 				.setWithStd(true)
 				.setWithMean(true);
 
-		Dataset<Row> scaledDs = scaler.fit(transformDs).transform(transformDs);
+		Dataset<Row> scaledDs = scaler.fit(indexedDs).transform(indexedDs);
 
 		//Create training and test set
 		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},randomSeed);
@@ -87,7 +93,7 @@ public class SparkLoadLinearRegression {
 				.setMaxIter(50) //Set maximum iterations
 				//.setRegParam(0.3) //Set Lambda
 				.setFeaturesCol("features")
-                                .setLabelCol("indexedLabel")
+				.setLabelCol("indexedLabel")
 				//.setElasticNetParam(0.8); //Set Alpha
 		;
 
@@ -134,7 +140,7 @@ public class SparkLoadLinearRegression {
 		System.out.println("Best F1 Measure on Training:"+trainF1+" at threshold: "+f1Thresh);
 
 		/*
-			Make Predictions on our test set
+			Make Predictions on our training set
 		*/
 		Dataset<Row> predictions_training = lrModel.transform(training);
 
@@ -147,6 +153,9 @@ public class SparkLoadLinearRegression {
 		double accuracy_training = evaluator.evaluate(predictions_training);
 		System.out.println("Training Error = " + (1.0 - accuracy_training));
 
+		/*
+			Make Predictions on our test set
+		*/
 		Dataset<Row> predictions_test = lrModel.transform(test);
 		double accuracy_test = evaluator.evaluate(predictions_test);
 		System.out.println("Test Error = " + (1.0 - accuracy_test));

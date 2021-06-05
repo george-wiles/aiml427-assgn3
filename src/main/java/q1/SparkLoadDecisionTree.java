@@ -3,10 +3,7 @@ package q1;
 import org.apache.spark.ml.classification.DecisionTreeClassificationModel;
 import org.apache.spark.ml.classification.DecisionTreeClassifier;
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
-import org.apache.spark.ml.feature.StandardScaler;
-import org.apache.spark.ml.feature.StringIndexer;
-import org.apache.spark.ml.feature.StringIndexerModel;
-import org.apache.spark.ml.feature.VectorAssembler;
+import org.apache.spark.ml.feature.*;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -67,14 +64,22 @@ public class SparkLoadDecisionTree {
 				.setOutputCol("features");
 		Dataset<Row> transformDs = vectorAssembler.transform(ds);
 
+		VectorIndexerModel featureIndexer = new VectorIndexer()
+				.setInputCol("features").setOutputCol("indexedFeatures")
+				.setMaxCategories(12)
+				.fit(transformDs);
+		Dataset<Row> indexedDs = featureIndexer.transform(transformDs);
+
 		//Scale the features
 		StandardScaler scaler = new StandardScaler()
-				.setInputCol("features")
+				.setInputCol("indexedFeatures")
 				.setOutputCol("scaledFeatures")
 				.setWithStd(true)
 				.setWithMean(true);
 
-		Dataset<Row> scaledDs = scaler.fit(transformDs).transform(transformDs);
+		Dataset<Row> scaledDs = scaler
+				.fit(indexedDs)
+				.transform(indexedDs);
 
 		//Create training and test set
 		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},randomSeed);
@@ -101,7 +106,6 @@ public class SparkLoadDecisionTree {
 		Dataset<Row> predictions_test = dtModel.transform(test);
 		double accuracy_test = evaluator.evaluate(predictions_test);
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
-
 
 	}
 }
