@@ -1,4 +1,4 @@
-package q1;
+package q2;
 
 import org.apache.spark.ml.classification.DecisionTreeClassificationModel;
 import org.apache.spark.ml.classification.DecisionTreeClassifier;
