@@ -2,3 +2,10 @@ http://co246a-6.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_07
 Random Seed: 8
 Training Error = 0.04499880639770826
 Test Error = 0.046892575928008995
+
+http://co246a-8.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_0733_01_000001/wilesgeor/stdout/?start=-4096
+Random Seed: 8
+Training Error = 0.04499880639770826
+Test Error = 0.046892575928008995
+
+

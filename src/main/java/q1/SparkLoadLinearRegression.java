@@ -153,11 +153,15 @@ public class SparkLoadLinearRegression {
 		double accuracy_training = evaluator.evaluate(predictions_training);
 		System.out.println("Training Error = " + (1.0 - accuracy_training));
 
+		MulticlassClassificationEvaluator evaluator2 = new MulticlassClassificationEvaluator()
+				.setLabelCol("indexedLabel")
+				.setPredictionCol("prediction")
+				.setMetricName("accuracy");
 		/*
 			Make Predictions on our test set
 		*/
 		Dataset<Row> predictions_test = lrModel.transform(test);
-		double accuracy_test = evaluator.evaluate(predictions_test);
+		double accuracy_test = evaluator2.evaluate(predictions_test);
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
 
 	}
