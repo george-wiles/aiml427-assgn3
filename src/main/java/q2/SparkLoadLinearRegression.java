@@ -46,18 +46,21 @@ public class SparkLoadLinearRegression {
 				new StructField("sentence", DataTypes.StringType, false, Metadata.empty())
 		});
 		Dataset<Row> sentenceData = spark.read().schema(schema).format("csv").load(trainingFile);
+		sentenceData.select("label", "sentence").show();
 
 		Tokenizer sentenceTokenizer = new
 				Tokenizer()
 				.setInputCol("sentence")
 				.setOutputCol("words");
 		Dataset<Row> sentenceWords = sentenceTokenizer.transform(sentenceData);
+		sentenceWords.select("sentence", "words").show();
 
 		Tokenizer titleTokenizer = new
 				Tokenizer()
 				.setInputCol("title")
 				.setOutputCol("words");
 		Dataset<Row> titleWords = titleTokenizer.transform(sentenceData);
+		titleWords.select("title", "words").show();
 
 		int numFeatures = 40;
 		HashingTF hashingTF = new HashingTF()
@@ -66,13 +69,14 @@ public class SparkLoadLinearRegression {
 				.setNumFeatures(numFeatures);
 
 		Dataset<Row> featurizedData = hashingTF.transform(sentenceWords);
+		featurizedData.select("words", "rawFeatures").show();
 
 		IDF idf = new IDF()
 				.setInputCol("rawFeatures")
 				.setOutputCol("features");
 		IDFModel idfModel = idf.fit(featurizedData);
 		Dataset<Row> rescaledData = idfModel.transform(featurizedData);
-		//rescaledData.select("label", "features").show();
+		rescaledData.select("rawFeatures", "features").show();
 
 
 //		String[] featureCols = {
