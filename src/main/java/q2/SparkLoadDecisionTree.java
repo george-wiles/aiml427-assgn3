@@ -103,7 +103,8 @@ public class SparkLoadDecisionTree {
 
 		DecisionTreeClassifier dt = new DecisionTreeClassifier()
 				.setFeaturesCol("features")
-				.setLabelCol("indexedLabel");
+				.setLabelCol("indexedLabel")
+				.setMaxDepth(10);
 
 		Pipeline pipeline = new Pipeline()
 				.setStages(new PipelineStage[] {

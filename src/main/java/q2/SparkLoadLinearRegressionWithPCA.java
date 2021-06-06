@@ -14,6 +14,9 @@ import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.System.exit;
 
 public class SparkLoadLinearRegressionWithPCA {
@@ -100,19 +103,13 @@ public class SparkLoadLinearRegressionWithPCA {
 				.setInputCols(new String[] {"sw_idf_features", "tw_idf_features"})
 				.setOutputCol("features");
 
-		PCA pca = new PCA()
-				.setInputCol("features")
-				.setOutputCol("pcaFeatures")
-				.setK(3);
+		List<String> hello = new ArrayList();
+		String[] something = hello.toArray(new String[hello.size()]);
 
-//		Dataset<Row> result = pca.transform(df).select("pcaFeatures");
-//		result.show(false);
 		LogisticRegression lr = new LogisticRegression()
 				.setMaxIter(300) //Set maximum iterations
 				.setFeaturesCol("pcaFeatures")
 				.setLabelCol("indexedLabel");
-
-
 
 		Pipeline pipeline = new Pipeline()
 				.setStages(new PipelineStage[] {
