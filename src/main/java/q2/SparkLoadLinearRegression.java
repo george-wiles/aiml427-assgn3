@@ -5,10 +5,7 @@ import org.apache.spark.ml.PipelineModel;
 import org.apache.spark.ml.PipelineStage;
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
-import org.apache.spark.ml.feature.HashingTF;
-import org.apache.spark.ml.feature.IDF;
-import org.apache.spark.ml.feature.Tokenizer;
-import org.apache.spark.ml.feature.VectorAssembler;
+import org.apache.spark.ml.feature.*;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -40,11 +37,19 @@ public class SparkLoadLinearRegression {
 				.getOrCreate();
 
 		StructType schema = new StructType(new StructField[]{
-				new StructField("label", DataTypes.DoubleType, false, Metadata.empty()),
+				new StructField("label", DataTypes.StringType, false, Metadata.empty()),
 				new StructField("title", DataTypes.StringType, false, Metadata.empty()),
 				new StructField("sentence", DataTypes.StringType, false, Metadata.empty())
 		});
 		Dataset<Row> trainingSet = spark.read().schema(schema).format("csv").load(trainingFile);
+
+		StringIndexer labelIndexer = new StringIndexer()
+				.setInputCol("label")
+				.setOutputCol("indexedLabel")
+				.setHandleInvalid("keep");
+		StringIndexerModel sim = labelIndexer.fit(trainingSet);
+		Dataset<Row> trsi = sim.transform(trainingSet);
+		trsi.show();
 
 		Tokenizer sentenceTokenizer = new
 				Tokenizer()
@@ -82,10 +87,11 @@ public class SparkLoadLinearRegression {
 		LogisticRegression lr = new LogisticRegression()
 				.setMaxIter(300) //Set maximum iterations
 				.setFeaturesCol("features")
-				.setLabelCol("label");
+				.setLabelCol("indexedLabel");
 
 		Pipeline pipeline = new Pipeline()
 				.setStages(new PipelineStage[] {
+						labelIndexer,
 						sentenceTokenizer,
 						titleTokenizer,
 						sentenceHashing,
@@ -93,7 +99,8 @@ public class SparkLoadLinearRegression {
 						sentenceIdf,
 						titleIdf,
 						vectorAssembler,
-						lr});
+						lr
+				});
 
 		PipelineModel pipelineModel = pipeline.fit(trainingSet);
 		Dataset<Row> predictions_training = pipelineModel.transform(trainingSet);
