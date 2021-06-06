@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 root_dir="/home/wilesgeor/dev/git/aiml427-assgn3"
+#root_dir="/home/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3"
 script_dir=${root_dir}"/src/scripts"
 resources_dir=${root_dir}"/src/main/resources"
 lib_dir=${root_dir}"/lib"
@@ -23,4 +24,12 @@ jar cvf skdd_dt.jar -C ${class_dir}_dt/ .
 rm -r ${class_dir}_dt
 mkdir ${class_dir}_dt
 
+
+rm -r ${class_dir}_dt2
+mkdir ${class_dir}_dt2
+rm ${script_dir}/q1/skdd_dt2.jar
+javac -cp "$lib_dir/jars/*" -d ${class_dir}_dt2 $src_dir/q1/pipeline_SparkLoadDecisionTree2.java
+jar cvf skdd_dt2.jar -C ${class_dir}_dt2/ .
+rm -r ${class_dir}_dt2
+mkdir ${class_dir}_dt2
 
