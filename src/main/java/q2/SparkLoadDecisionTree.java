@@ -1,16 +1,18 @@
 package q2;
 
-import org.apache.spark.ml.classification.DecisionTreeClassificationModel;
+import org.apache.spark.ml.Pipeline;
+import org.apache.spark.ml.PipelineModel;
+import org.apache.spark.ml.PipelineStage;
 import org.apache.spark.ml.classification.DecisionTreeClassifier;
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 import org.apache.spark.ml.feature.*;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import org.apache.spark.sql.types.DataTypes;
+import org.apache.spark.sql.types.Metadata;
+import org.apache.spark.sql.types.StructField;
+import org.apache.spark.sql.types.StructType;
 
 import static java.lang.System.exit;
 
@@ -20,80 +22,102 @@ public class SparkLoadDecisionTree {
 	public static void main(String[] args) {
 		String appName = "q2.SparkLoadDecisionTree";
 
-		if (args.length != 2) {
-			System.out.println("provide input filename and random seed");
+		if (args.length != 4) {
+			System.out.println("Usage: training test seed features");
 			exit(0);
 		}
-		String filename = args[0];
-		Long randomSeed = Long.parseLong(args[1]);
-
-		System.out.println("Random Seed: "+args[1]);
+		String trainingFile = args[0];
+		String testFile = args[1];
+		Long randomSeed = Long.parseLong(args[2]);
+		int numFeatures = Integer.parseInt(args[3]);
+		System.out.println(String.format("train=%s, test=%s, seed=%d, features=%d",
+				trainingFile,
+				testFile,
+				randomSeed,
+				numFeatures));
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
-				//.master("local")
 				.getOrCreate();
-		Dataset<Row> df = spark.read().option("inferSchema", "true").format("csv").load(filename);
 
-		String[] featureCols = {
-				"duration","protocol_type","service","flag","src_bytes","dst_bytes",
-				"land","wrong_fragment","urgent","hot","num_failed_logins","logged_in",
-				"num_compromised","root_shell","su_attempted","num_root","num_file_creations",
-				"num_shells","num_access_files","num_outbound_cmds","is_host_login","is_guest_login",
-				"count","srv_count","serror_rate","srv_serror_rate","rerror_rate","srv_rerror_rate",
-				"same_srv_rate","diff_srv_rate","srv_diff_host_rate","dst_host_count",
-				"dst_host_srv_count","dst_host_same_srv_rate","dst_host_diff_srv_rate",
-				"dst_host_same_src_port_rate","dst_host_srv_diff_host_rate","dst_host_serror_rate",
-				"dst_host_srv_serror_rate","dst_host_rerror_rate","dst_host_srv_rerror_rate"
-		};
-		List cols = new LinkedList(Arrays.asList(featureCols));
-		cols.add("label");
+		/*
+		Class Index,Title,Description
+		 */
+		StructType schema = new StructType(new StructField[]{
+				new StructField("Class Index", DataTypes.StringType, false, Metadata.empty()),
+				new StructField("Title", DataTypes.StringType, false, Metadata.empty()),
+				new StructField("Description", DataTypes.StringType, false, Metadata.empty())
+		});
+		Dataset<Row> trainingSet = spark.read().option("header","true").schema(schema).format("csv").load(trainingFile);
+		Dataset<Row> testSet = spark.read().option("header","true").schema(schema).format("csv").load(testFile);
 
-		Dataset<Row> ds = df.toDF((String[])cols.toArray(new String[cols.size()]));
+		StringIndexer labelIndexer = new StringIndexer()
+				.setInputCol("Class Index")
+				.setOutputCol("indexedLabel")
+				.setHandleInvalid("keep");
 
-		// Index labels, adding metadata to the label column.
-		// Fit on whole dataset to include all labels in index.
-		StringIndexerModel labelIndexer = new StringIndexer()
-				.setInputCol("label")
-				.setOutputCol("indexedLabel").fit(ds);
+		Tokenizer sentenceTokenizer = new
+				Tokenizer()
+				.setInputCol("Description")
+				.setOutputCol("sentence_words");
 
-		ds = labelIndexer.transform(ds);
+		StopWordsRemover swStopRemover = new StopWordsRemover()
+				.setInputCol("sentence_words")
+				.setOutputCol("sentence_stop_words");
+
+		HashingTF sentenceHashing = new HashingTF()
+				.setInputCol("sentence_stop_words")
+				.setOutputCol("sw_rawFeatures")
+				.setNumFeatures(numFeatures);
+
+		IDF sentenceIdf = new IDF()
+				.setInputCol("sw_rawFeatures")
+				.setOutputCol("sw_idf_features");
+
+		Tokenizer titleTokenizer = new
+				Tokenizer()
+				.setInputCol("Title")
+				.setOutputCol("title_words");
+
+		StopWordsRemover twStopRemover = new StopWordsRemover()
+				.setInputCol("title_words")
+				.setOutputCol("title_stop_words");
+
+		HashingTF titleHashing = new HashingTF()
+				.setInputCol("title_stop_words")
+				.setOutputCol("tw_rawFeatures")
+				.setNumFeatures(numFeatures);
+
+		IDF titleIdf = new IDF()
+				.setInputCol("tw_rawFeatures")
+				.setOutputCol("tw_idf_features");
 
 		VectorAssembler vectorAssembler = new VectorAssembler()
-				.setInputCols(featureCols)
+				.setInputCols(new String[] {"sw_idf_features", "tw_idf_features"})
 				.setOutputCol("features");
-		Dataset<Row> transformDs = vectorAssembler.transform(ds);
 
-		VectorIndexerModel featureIndexer = new VectorIndexer()
-				.setInputCol("features").setOutputCol("indexedFeatures")
-				.setMaxCategories(12)
-				.fit(transformDs);
-		Dataset<Row> indexedDs = featureIndexer.transform(transformDs);
-
-		//Scale the features
-		StandardScaler scaler = new StandardScaler()
-				.setInputCol("indexedFeatures")
-				.setOutputCol("scaledFeatures")
-				.setWithStd(true)
-				.setWithMean(true);
-
-		Dataset<Row> scaledDs = scaler
-				.fit(indexedDs)
-				.transform(indexedDs);
-
-		//Create training and test set
-		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},randomSeed);
-		Dataset<Row> training = splits[0];
-		Dataset<Row> test = splits[1];
-
-		//Define the Logistic Regression instance
-		DecisionTreeClassifier dtc = new DecisionTreeClassifier()
+		DecisionTreeClassifier dt = new DecisionTreeClassifier()
 				.setFeaturesCol("features")
 				.setLabelCol("indexedLabel");
 
-		DecisionTreeClassificationModel dtModel = dtc.fit(training);
+		Pipeline pipeline = new Pipeline()
+				.setStages(new PipelineStage[] {
+						labelIndexer,
+						sentenceTokenizer,
+						swStopRemover,
+						titleTokenizer,
+						twStopRemover,
+						sentenceHashing,
+						titleHashing,
+						sentenceIdf,
+						titleIdf,
+						vectorAssembler,
+						dt
+				});
 
-		Dataset<Row> predictions_training = dtModel.transform(training);
+		PipelineModel pipelineModel = pipeline.fit(trainingSet);
+		Dataset<Row> predictions_training = pipelineModel.transform(trainingSet);
+		predictions_training.show();
 
 		MulticlassClassificationEvaluator evaluator = new MulticlassClassificationEvaluator()
 				.setLabelCol("indexedLabel")
@@ -103,10 +127,9 @@ public class SparkLoadDecisionTree {
 		double accuracy_training = evaluator.evaluate(predictions_training);
 		System.out.println("Training Error = " + (1.0 - accuracy_training));
 
-		Dataset<Row> predictions_test = dtModel.transform(test);
+		Dataset<Row> predictions_test = pipelineModel.transform(testSet);
 		double accuracy_test = evaluator.evaluate(predictions_test);
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
-
 	}
 }
 

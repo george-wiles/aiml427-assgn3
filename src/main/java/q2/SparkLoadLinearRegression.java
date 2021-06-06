@@ -21,60 +21,68 @@ public class SparkLoadLinearRegression {
 	public static void main(String[] args) {
 		String appName = "q2.SparkLoadLinearRegression";
 
-		if (args.length != 3) {
-			System.out.println("Usage: training test seed");
+		if (args.length != 4) {
+			System.out.println("Usage: training test seed features");
 			exit(0);
 		}
 		String trainingFile = args[0];
 		String testFile = args[1];
 		Long randomSeed = Long.parseLong(args[2]);
-
-		System.out.println("Random Seed: "+args[2]);
+		int numFeatures = Integer.parseInt(args[3]);
+		System.out.println(String.format("train=%s, test=%s, seed=%d, features=%d",
+				trainingFile,
+				testFile,
+				randomSeed,
+				numFeatures));
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
-				//.master("local")
 				.getOrCreate();
 
 		StructType schema = new StructType(new StructField[]{
-				new StructField("label", DataTypes.StringType, false, Metadata.empty()),
-				new StructField("title", DataTypes.StringType, false, Metadata.empty()),
-				new StructField("sentence", DataTypes.StringType, false, Metadata.empty())
+				new StructField("Class Index", DataTypes.StringType, false, Metadata.empty()),
+				new StructField("Title", DataTypes.StringType, false, Metadata.empty()),
+				new StructField("Description", DataTypes.StringType, false, Metadata.empty())
 		});
-		Dataset<Row> trainingSet = spark.read().schema(schema).format("csv").load(trainingFile);
+		Dataset<Row> trainingSet = spark.read().option("header","true").schema(schema).format("csv").load(trainingFile);
+		Dataset<Row> testSet = spark.read().option("header","true").schema(schema).format("csv").load(testFile);
 
 		StringIndexer labelIndexer = new StringIndexer()
-				.setInputCol("label")
+				.setInputCol("Class Index")
 				.setOutputCol("indexedLabel")
 				.setHandleInvalid("keep");
-		StringIndexerModel sim = labelIndexer.fit(trainingSet);
-		Dataset<Row> trsi = sim.transform(trainingSet);
-		trsi.show();
 
 		Tokenizer sentenceTokenizer = new
 				Tokenizer()
-				.setInputCol("sentence")
+				.setInputCol("Description")
 				.setOutputCol("sentence_words");
 
-		Tokenizer titleTokenizer = new
-				Tokenizer()
-				.setInputCol("title")
-				.setOutputCol("title_words");
-
-		int numFeatures = 200;
-		HashingTF sentenceHashing = new HashingTF()
+		StopWordsRemover swStopRemover = new StopWordsRemover()
 				.setInputCol("sentence_words")
-				.setOutputCol("sw_rawFeatures")
-				.setNumFeatures(numFeatures);
+				.setOutputCol("sentence_stop_words");
 
-		HashingTF titleHashing = new HashingTF()
-				.setInputCol("title_words")
-				.setOutputCol("tw_rawFeatures")
+		HashingTF sentenceHashing = new HashingTF()
+				.setInputCol("sentence_stop_words")
+				.setOutputCol("sw_rawFeatures")
 				.setNumFeatures(numFeatures);
 
 		IDF sentenceIdf = new IDF()
 				.setInputCol("sw_rawFeatures")
 				.setOutputCol("sw_idf_features");
+
+		Tokenizer titleTokenizer = new
+				Tokenizer()
+				.setInputCol("Title")
+				.setOutputCol("title_words");
+
+		StopWordsRemover twStopRemover = new StopWordsRemover()
+				.setInputCol("title_words")
+				.setOutputCol("title_stop_words");
+
+		HashingTF titleHashing = new HashingTF()
+				.setInputCol("title_stop_words")
+				.setOutputCol("tw_rawFeatures")
+				.setNumFeatures(numFeatures);
 
 		IDF titleIdf = new IDF()
 				.setInputCol("tw_rawFeatures")
@@ -93,7 +101,9 @@ public class SparkLoadLinearRegression {
 				.setStages(new PipelineStage[] {
 						labelIndexer,
 						sentenceTokenizer,
+						swStopRemover,
 						titleTokenizer,
+						twStopRemover,
 						sentenceHashing,
 						titleHashing,
 						sentenceIdf,
@@ -114,7 +124,9 @@ public class SparkLoadLinearRegression {
 		double accuracy_training = evaluator.evaluate(predictions_training);
 		System.out.println("Training Error = " + (1.0 - accuracy_training));
 
-
+		Dataset<Row> predictions_test = pipelineModel.transform(testSet);
+		double accuracy_test = evaluator.evaluate(predictions_test);
+		System.out.println("Test Error = " + (1.0 - accuracy_test));
 	}
 }
 

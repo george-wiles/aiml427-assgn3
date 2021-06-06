@@ -57,7 +57,7 @@ public class pipeline_SparkLoadLinearRegression {
 		Dataset<Row> ds = df.toDF((String[])cols.toArray(new String[cols.size()]));
 
 		//Create training and test set
-		Dataset<Row>[] splits = ds.randomSplit (new double[]{0.7,0.3},randomSeed);
+		Dataset<Row>[] splits = ds.randomSplit (new double[]{0.7,0.3}, randomSeed);
 		Dataset<Row> training = splits[0];
 		Dataset<Row> test = splits[1];
 
