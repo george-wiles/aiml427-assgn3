@@ -17,6 +17,12 @@ rm -r ${class_dir}_dt
 mkdir ${class_dir}_dt
 rm ${script_dir}/q2/skdd_dt.jar
 javac -cp "$lib_dir/jars/*" -d ${class_dir}_dt $src_dir/q2/SparkLoadDecisionTree.java
-jar cvf skdd_dt.jar -C ${class_dir}_dt/ .
+jar cvf ${script_dir}/q2/skdd_dt.jar -C ${class_dir}_dt/ .
+
+rm -r ${class_dir}_lr_pca
+mkdir ${class_dir}_lr_pca
+rm ${script_dir}/q2/skdd_lr_pca.jar
+javac -cp "$lib_dir/jars/*" -d ${class_dir}_lr_pca $src_dir/q2/SparkLoadLinearRegressionWithPCA.java
+jar cvf ${script_dir}/q2/skdd_lr_pca.jar -C ${class_dir}_lr_pca/ .
 
 

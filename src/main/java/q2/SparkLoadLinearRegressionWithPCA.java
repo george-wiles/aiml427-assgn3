@@ -16,7 +16,7 @@ import org.apache.spark.sql.types.StructType;
 
 import static java.lang.System.exit;
 
-public class SparkLoadLinearRegression {
+public class SparkLoadLinearRegressionWithPCA {
 
 	public static void main(String[] args) {
 		String appName = "q2.SparkLoadLinearRegression";
@@ -100,27 +100,40 @@ public class SparkLoadLinearRegression {
 				.setInputCols(new String[] {"sw_idf_features", "tw_idf_features"})
 				.setOutputCol("features");
 
+		PCA pca = new PCA()
+				.setInputCol("features")
+				.setOutputCol("pcaFeatures")
+				.setK(3);
+
+//		Dataset<Row> result = pca.transform(df).select("pcaFeatures");
+//		result.show(false);
 		LogisticRegression lr = new LogisticRegression()
 				.setMaxIter(300) //Set maximum iterations
-				.setFeaturesCol("features")
+				.setFeaturesCol("pcaFeatures")
 				.setLabelCol("indexedLabel");
+
+
 
 		Pipeline pipeline = new Pipeline()
 				.setStages(new PipelineStage[] {
 						labelIndexer,
 						sentenceTokenizer,
 						swStopRemover,
-//						sentenceHashing,
-						sentenceCountVectorizer,
+						sentenceHashing,
+//						sentenceCountVectorizer,
 						sentenceIdf,
 						titleTokenizer,
 						twStopRemover,
-//						titleHashing,
-						titleCountVectorizer,
+						titleHashing,
+//						titleCountVectorizer,
 						titleIdf,
 						vectorAssembler,
+						pca,
 						lr
 				});
+
+
+
 
 		PipelineModel pipelineModel = pipeline.fit(trainingSet);
 		Dataset<Row> predictions_training = pipelineModel.transform(trainingSet);

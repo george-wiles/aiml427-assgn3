@@ -40,9 +40,6 @@ public class SparkLoadDecisionTree {
 				.appName(appName)
 				.getOrCreate();
 
-		/*
-		Class Index,Title,Description
-		 */
 		StructType schema = new StructType(new StructField[]{
 				new StructField("Class Index", DataTypes.StringType, false, Metadata.empty()),
 				new StructField("Title", DataTypes.StringType, false, Metadata.empty()),
@@ -67,8 +64,12 @@ public class SparkLoadDecisionTree {
 
 		HashingTF sentenceHashing = new HashingTF()
 				.setInputCol("sentence_stop_words")
-				.setOutputCol("sw_rawFeatures")
-				.setNumFeatures(numFeatures);
+				.setOutputCol("sw_rawFeatures");
+//				.setNumFeatures(numFeatures);
+
+		CountVectorizer sentenceCountVectorizer = new CountVectorizer()
+				.setInputCol("sentence_stop_words")
+				.setOutputCol("sw_rawFeatures");
 
 		IDF sentenceIdf = new IDF()
 				.setInputCol("sw_rawFeatures")
@@ -83,10 +84,14 @@ public class SparkLoadDecisionTree {
 				.setInputCol("title_words")
 				.setOutputCol("title_stop_words");
 
+		CountVectorizer titleCountVectorizer = new CountVectorizer()
+				.setInputCol("title_stop_words")
+				.setOutputCol("tw_rawFeatures");
+
 		HashingTF titleHashing = new HashingTF()
 				.setInputCol("title_stop_words")
-				.setOutputCol("tw_rawFeatures")
-				.setNumFeatures(numFeatures);
+				.setOutputCol("tw_rawFeatures");
+//				.setNumFeatures(numFeatures);
 
 		IDF titleIdf = new IDF()
 				.setInputCol("tw_rawFeatures")
@@ -105,11 +110,13 @@ public class SparkLoadDecisionTree {
 						labelIndexer,
 						sentenceTokenizer,
 						swStopRemover,
+						sentenceHashing,
+//						sentenceCountVectorizer,
+						sentenceIdf,
 						titleTokenizer,
 						twStopRemover,
-						sentenceHashing,
 						titleHashing,
-						sentenceIdf,
+//						titleCountVectorizer,
 						titleIdf,
 						vectorAssembler,
 						dt
