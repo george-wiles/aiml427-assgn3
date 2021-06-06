@@ -92,6 +92,7 @@ public class SparkLoadLinearRegression {
 						titleHashing,
 						sentenceIdf,
 						titleIdf,
+						vectorAssembler,
 						lr});
 
 		PipelineModel pipelineModel = pipeline.fit(trainingSet);

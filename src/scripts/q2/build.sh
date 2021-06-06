@@ -13,8 +13,8 @@ mkdir ${class_dir}_lr
 rm ${script_dir}/q2/skdd_lr.jar
 javac -cp "$lib_dir/jars/*" -d ${class_dir}_lr $src_dir/q2/SparkLoadLinearRegression.java
 jar cvf ${script_dir}/q2/skdd_lr.jar -C ${class_dir}_lr/ .
-rm -r ${class_dir}_dt
-mkdir ${class_dir}_dt
+rm -r ${class_dir}_lr
+mkdir ${class_dir}_lr
 
 rm -r ${class_dir}_dt
 mkdir ${class_dir}_dt
