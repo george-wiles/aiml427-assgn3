@@ -1,0 +1,9 @@
+http://co246a-6.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_0706_01_000001/knoxdavi/stdout/?start=-4096
+Random Seed: 6
+Training Error = 0.04861798865580269
+Test Error = 0.05043357613596944
+
+http://co246a-5.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_0731_01_000001/wilesgeor/stdout/?start=-4096
+Random Seed: 6
+Training Error = 0.04861798865580269
+Test Error = 0.05043357613596944

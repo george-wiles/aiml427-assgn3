@@ -4,6 +4,7 @@
 scratch.*
 /lib/
 **/*.class
+**/*.jar
 
 ### IntelliJ IDEA ###
 .idea
