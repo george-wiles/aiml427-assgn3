@@ -18,7 +18,7 @@ public class SparkLoadDecisionTree {
 
 
 	public static void main(String[] args) {
-		String appName = "q1.SparkLoadDecisionTree";
+		String appName = "q2.SparkLoadDecisionTree";
 
 		if (args.length != 2) {
 			System.out.println("provide input filename and random seed");

@@ -51,6 +51,11 @@ public class SparkLoadDecisionTree {
 
 		Dataset<Row> ds = df.toDF((String[])cols.toArray(new String[cols.size()]));
 
+		//Create training and test set
+		Dataset<Row>[] splits = ds.randomSplit (new double[]{0.7,0.3},randomSeed);
+		Dataset<Row> training = splits[0];
+		Dataset<Row> test = splits[1];
+
 		// Index labels, adding metadata to the label column.
 		// Fit on whole dataset to include all labels in index.
 		StringIndexerModel labelIndexer = new StringIndexer()
@@ -80,11 +85,6 @@ public class SparkLoadDecisionTree {
 		Dataset<Row> scaledDs = scaler
 				.fit(indexedDs)
 				.transform(indexedDs);
-
-		//Create training and test set
-		Dataset<Row>[] splits = scaledDs.randomSplit (new double[]{0.7,0.3},randomSeed);
-		Dataset<Row> training = splits[0];
-		Dataset<Row> test = splits[1];
 
 		//Define the Logistic Regression instance
 		DecisionTreeClassifier dtc = new DecisionTreeClassifier()
