@@ -29,6 +29,8 @@
 
 build.sh
 ```
+nohup ./execlocal_lr.sh > logs/output.local_lr.log 2>&1 &
+tail -f logs/output.local_lr.log
 
 ```
 
