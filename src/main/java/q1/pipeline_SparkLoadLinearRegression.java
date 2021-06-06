@@ -88,7 +88,8 @@ public class pipeline_SparkLoadLinearRegression {
 		//OneHotEncoder encoder = new OneHotEncoder()
 		OneHotEncoderEstimator encoder = new OneHotEncoderEstimator()
   			.setInputCols(catCols)
-  			.setOutputCols(catVecCols);
+  			.setOutputCols(catVecCols)
+			.setHandleInvalid("keep");
   			//.setInputCol("protocol_type")
   			//.setOutputCol("protocol_type_vec");
 		// Get the features into a single column as in libSVM format
