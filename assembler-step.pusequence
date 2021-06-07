@@ -1,0 +1,14 @@
+@startuml
+autonumber
+SparkLoadLinearRegressionAIGNewsWithPCA -> Pipeline : createStages
+SentenceWordIDF -> Pipeline: stage
+TitleWordIDF -> Pipeline: stage
+VectorAssember -> Pipeline: [SentenceWordIDF.outputCols, TitleWordIDF.outputCols]
+StandardScaler -> Pipeline: stage
+SparkLoadLinearRegressionAIGNewsWithPCA -> LogisticRegression: create
+LogisticRegression -> Pipeline: stage
+SparkLoadLinearRegressionAIGNewsWithPCA -> Pipeline: fit
+Pipeline -> PipelineModel: fit
+SparkLoadLinearRegressionAIGNewsWithPCA <- PipelineModel: model
+SparkLoadLinearRegressionAIGNewsWithPCA <- PipelineModel: transform
+@enduml

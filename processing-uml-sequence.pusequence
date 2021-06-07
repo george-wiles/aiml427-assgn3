@@ -1,0 +1,12 @@
+@startuml
+autonumber
+SparkLoadDecisionTreeAIGNewsWithPCA -> Pipeline : createStages
+SparkLoadDecisionTreeAIGNewsWithPCA -> sentenceWordRegexTokenizer: create
+sentenceWordRegexTokenizer -> Pipeline: stage
+SparkLoadDecisionTreeAIGNewsWithPCA -> sentenceWordStopRemover: create
+sentenceWordStopRemover -> Pipeline: stage
+SparkLoadDecisionTreeAIGNewsWithPCA -> sentenceWordHashingTF: create
+sentenceWordHashingTF -> Pipeline: stage
+SparkLoadDecisionTreeAIGNewsWithPCA -> sentenceWordIDF: create
+sentenceWordIDF -> Pipeline: stage
+@enduml
