@@ -3,6 +3,8 @@ package q2;
 import org.apache.spark.ml.classification.BinaryLogisticRegressionTrainingSummary;
 import org.apache.spark.ml.classification.LogisticRegression;
 import org.apache.spark.ml.classification.LogisticRegressionModel;
+import org.apache.spark.ml.classification.DecisionTreeClassificationModel;
+import org.apache.spark.ml.classification.DecisionTreeClassifier;
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
 import org.apache.spark.ml.feature.*;
 import org.apache.spark.sql.Dataset;
@@ -14,34 +16,44 @@ import org.apache.spark.ml.PipelineStage;
 import org.apache.spark.ml.PipelineModel;
 import org.apache.spark.ml.feature.HashingTF;
 import org.apache.spark.ml.feature.Tokenizer;
+import org.apache.spark.ml.feature.StopWordsRemover;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
+import org.apache.spark.ml.feature.PCA;
+import org.apache.spark.ml.feature.PCAModel;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 import static java.lang.System.exit;
 
-public class BigDataClusterEater1 {
+public class BigDataClusterEater2 {
 
 	public static void main(String[] args) {
-		String appName = "q2.BigDataClusterEater1";
+		String appName = "q2.BigDataClusterEater2";
 
-		if (args.length != 3) {
-			System.out.println("args: input file, hashing features, random seed");
+		if (args.length != 6) {
+			System.out.println("args: input file, hashing features, use scaling, use pca, pcaK, random seed");
 			exit(0);
 		}
 
 		System.out.println("InputFile: "+args[0]);
 		System.out.println("Number of Hashing Features: "+args[1]);
-		System.out.println("Random Seed: "+args[2]);
+		System.out.println("Use Scaling: "+args[2]);
+		System.out.println("Use PCA: "+args[3]);
+		System.out.println("pcaK: "+args[4]);
+		System.out.println("Random Seed: "+args[5]);
 
 		String inFile = args[0];
 		int numFeatures = Integer.parseInt(args[1]);
-		long randomSeed = Long.parseLong(args[2]);
+		int useScaling = Integer.parseInt(args[2]);
+		int usePCA = Integer.parseInt(args[3]);
+		int pcaK = Integer.parseInt(args[4]);
+		long randomSeed = Long.parseLong(args[5]);
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
@@ -52,17 +64,14 @@ public class BigDataClusterEater1 {
 			new StructField("sentiment", DataTypes.StringType, false, Metadata.empty())
 		});
 
-                //Dataset<Row> allData = spark.read().option("header","true").schema(schema).format("csv").load(inFile);
-		Dataset<Row> df0 = spark.read().option("inferSchema", "true").format("csv").load(inFile);
-		String[] featureCols = {"review","sentiment"};
-		Dataset<Row> allData = df0.toDF(featureCols);
-
-		allData.show();
+                Dataset<Row> allData = spark.read().option("header","true").schema(schema).format("csv").load(inFile);
 
 		//Create training and test set
 		Dataset<Row>[] splits = allData.randomSplit (new double[]{0.7,0.3}, randomSeed);
 		Dataset<Row> training = splits[0];
 		Dataset<Row> test = splits[1];
+
+		String pipeFeature = "review";
 
 		// Index labels, adding metadata to the label column.
 		// Fit on whole dataset to include all labels in index.
@@ -72,41 +81,66 @@ public class BigDataClusterEater1 {
 				.setHandleInvalid("skip");
 
 		Tokenizer tokenizer = new Tokenizer()
-			.setInputCol("review")
+			.setInputCol(pipeFeature)
 			.setOutputCol("words");
 
-		HashingTF hashingTF = new HashingTF()
+		StopWordsRemover stopwords = new StopWordsRemover()
 			.setInputCol("words")
+			.setOutputCol("filtered");
+
+		pipeFeature = new String("filtered");
+
+		HashingTF hashingTF = new HashingTF()
+			.setInputCol(pipeFeature)
 			.setOutputCol("rawFeatures")
 			.setNumFeatures(numFeatures);		
 
-		// Get the features into a single column as in libSVM format
-		VectorAssembler vectorAssembler = new VectorAssembler()
-				.setInputCols(new String[] {"rawFeatures"})
-				.setOutputCol("features");
+		pipeFeature = new String("rawFeatures");
+
+		PCA pca = new PCA()
+			.setInputCol(pipeFeature)
+			.setOutputCol("pcaFeatures")
+			.setK(pcaK);
+		if ( usePCA == 1 ) {
+			pipeFeature = new String("pcaFeatures");
+		}
+
 		//Scale the features
 		StandardScaler scaler = new StandardScaler()
-				.setInputCol("features")
+				.setInputCol(pipeFeature)
 				.setOutputCol("scaledFeatures")
 				.setWithStd(true)
 				.setWithMean(true);
+		if ( useScaling == 1 ) {
+			pipeFeature = new String("scaledFeatures");
+		}
 
 		//Define the Logistic Regression instance
 		//We want vanila logistic regression here - not regularised.
 		LogisticRegression lr = new LogisticRegression()
 				.setMaxIter(10) //Set maximum iterations
-				//.setRegParam(0.1) //Set Lambda
-				.setFeaturesCol("scaledFeatures")
-				//.setFeaturesCol("features")
+				.setFeaturesCol(pipeFeature)
 				.setLabelCol("indexedSentiment")
-				//.setElasticNetParam(0.0); //Set Alpha
 		;
 
-		System.out.println("LR Reg:"+String.valueOf(lr.getRegParam()));
-		System.out.println("LR ElasticNet:"+String.valueOf(lr.getElasticNetParam()));
+		ArrayList<PipelineStage> pipelinestages = new ArrayList();
+		pipelinestages.add(labelIndexer);
+		pipelinestages.add(tokenizer);
+		pipelinestages.add(stopwords);
+		pipelinestages.add(hashingTF);
+		if ( usePCA == 1 ) {
+			pipelinestages.add(pca);
+		}
+		if ( useScaling == 1 ) {
+			pipelinestages.add(scaler);
+		}
+		pipelinestages.add(lr);
+
+		PipelineStage[] pls = pipelinestages.toArray(new PipelineStage[pipelinestages.size()]);
 
 		Pipeline pipeline = new Pipeline()
-			.setStages(new PipelineStage[] {labelIndexer,tokenizer,hashingTF,vectorAssembler,scaler,lr});
+			//.setStages(new PipelineStage[] {labelIndexer,tokenizer,hashingTF,vectorAssembler,scaler,lr});
+			.setStages(pls);
 
 		//fit pipeline on training
 		PipelineModel pipelineModel = pipeline.fit(training);
