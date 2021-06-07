@@ -1,0 +1,23 @@
+@startuml
+autonumber
+pipeline_SparkLoadLinearRegression -> SparkSession : create
+pipeline_SparkLoadLinearRegression -> SparkSession : read().format("csv").load
+SparkSession -> DataSet: create
+SparkSession -> DataSet: create
+pipeline_SparkLoadLinearRegression <- DataSet: full
+pipeline_SparkLoadLinearRegression -> DataSet: randomSplit(70:30)
+pipeline_SparkLoadLinearRegression <- DataSet: DataSet[]
+pipeline_SparkLoadLinearRegression -> StringIndexer: create
+pipeline_SparkLoadLinearRegression -> OneHotEncoderEstimator: create
+pipeline_SparkLoadLinearRegression -> VectorAssembler: create
+pipeline_SparkLoadLinearRegression -> StandardScaler: create
+pipeline_SparkLoadLinearRegression -> LogisticRegressionModel: create
+pipeline_SparkLoadLinearRegression -> Pipeline: create
+pipeline_SparkLoadLinearRegression -> Pipeline: setStages(StringIndexer, OneHotEncoder, VectorAssember, StandardScalar, LogisticRegressionModel)
+pipeline_SparkLoadLinearRegression -> Pipeline: fit(trainingSet)
+pipeline_SparkLoadLinearRegression <- PipelineModel: model
+pipeline_SparkLoadLinearRegression -> PipelineModel: transform(training)
+pipeline_SparkLoadLinearRegression <- PipelineModel: DataSet() training prediction
+pipeline_SparkLoadLinearRegression -> PipelineModel: transform(test)
+pipeline_SparkLoadLinearRegression <- PipelineModel: DataSet() test prediction
+@enduml
