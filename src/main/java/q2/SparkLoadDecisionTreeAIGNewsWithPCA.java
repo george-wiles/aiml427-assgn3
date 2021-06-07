@@ -63,11 +63,6 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 				.setOutputCol("indexedLabel")
 				.setHandleInvalid("keep");
 
-		Tokenizer sentenceTokenizer = new
-				Tokenizer()
-				.setInputCol("Description")
-				.setOutputCol("sentence_words");
-
 		RegexTokenizer sentenceRegexTokenizer = new RegexTokenizer()
 				.setPattern("\\W+")
 				.setToLowercase(true)
@@ -84,10 +79,6 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 				.setOutputCol("sw_rawFeatures")
 				.setNumFeatures(numFeatures);
 
-		CountVectorizer sentenceCountVectorizer = new CountVectorizer()
-				.setInputCol("sentence_stop_words")
-				.setOutputCol("sw_rawFeatures");
-
 		IDF sentenceIdf = new IDF()
 				.setInputCol("sw_rawFeatures")
 				.setOutputCol("sw_idf_features");
@@ -99,18 +90,9 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 				.setInputCol("Title")
 				.setOutputCol("title_words_clean");
 
-		Tokenizer titleTokenizer = new
-				Tokenizer()
-				.setInputCol("Title")
-				.setOutputCol("title_words");
-
 		StopWordsRemover twStopRemover = new StopWordsRemover()
 				.setInputCol("title_words_clean")
 				.setOutputCol("title_stop_words");
-
-		CountVectorizer titleCountVectorizer = new CountVectorizer()
-				.setInputCol("title_stop_words")
-				.setOutputCol("tw_rawFeatures");
 
 		HashingTF titleHashing = new HashingTF()
 				.setInputCol("title_stop_words")
