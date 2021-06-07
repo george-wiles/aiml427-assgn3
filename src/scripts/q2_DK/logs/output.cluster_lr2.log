@@ -1,0 +1,881 @@
+nohup: ignoring input
+Submitting bdce1 logistic regression to cluster with random seed 123
+21/06/07 15:27:20 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:27:20 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:27:20 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:27:20 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:27:20 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:27:20 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:27:20 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:27:20 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:27:21 INFO yarn.Client: Uploading resource file:/tmp/spark-a1e2ab69-cbe4-48e4-8b61-1509124e0481/__spark_libs__4861692336042894248.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1379/__spark_libs__4861692336042894248.zip
+21/06/07 15:27:21 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1379/bdce1_lr6.jar
+21/06/07 15:27:21 INFO yarn.Client: Uploading resource file:/tmp/spark-a1e2ab69-cbe4-48e4-8b61-1509124e0481/__spark_conf__705178609972317592.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1379/__spark_conf__.zip
+21/06/07 15:27:21 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:27:21 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:27:21 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:27:21 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:27:21 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:27:21 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-304333366_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:27:21 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16065 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:27:22 INFO yarn.Client: Submitting application application_1617755808746_1379 to ResourceManager
+21/06/07 15:27:23 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1379
+21/06/07 15:27:24 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:24 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036442863
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1379/
+	 user: knoxdavi
+21/06/07 15:27:25 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:26 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:27 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:28 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:29 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:30 INFO yarn.Client: Application report for application_1617755808746_1379 (state: ACCEPTED)
+21/06/07 15:27:31 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:31 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 33731
+	 queue: default
+	 start time: 1623036442863
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1379/
+	 user: knoxdavi
+21/06/07 15:27:32 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:33 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:34 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:35 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:36 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:37 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:38 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:39 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:40 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:41 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:42 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:43 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:44 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:45 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:46 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:47 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:48 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:49 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:50 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:51 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:52 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:53 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:54 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:55 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:56 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:57 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:58 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:27:59 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:00 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:01 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:02 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:03 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:04 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:05 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:06 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:07 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:08 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:09 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:10 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:11 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:12 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:13 INFO yarn.Client: Application report for application_1617755808746_1379 (state: RUNNING)
+21/06/07 15:28:14 INFO yarn.Client: Application report for application_1617755808746_1379 (state: FINISHED)
+21/06/07 15:28:14 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 33731
+	 queue: default
+	 start time: 1623036442863
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1379/
+	 user: knoxdavi
+21/06/07 15:28:14 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:28:14 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-7d23c1aa-cd5f-474b-85a1-d35ecd1a16ed
+21/06/07 15:28:14 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-a1e2ab69-cbe4-48e4-8b61-1509124e0481
+21/06/07 15:28:16 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:28:16 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:28:16 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:28:16 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:28:16 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:28:16 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:28:16 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:28:16 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:28:17 INFO yarn.Client: Uploading resource file:/tmp/spark-fc875722-f62a-4b08-bcee-b073a69339cf/__spark_libs__4227249907364074114.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1380/__spark_libs__4227249907364074114.zip
+21/06/07 15:28:17 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1380/bdce1_lr6.jar
+21/06/07 15:28:17 INFO yarn.Client: Uploading resource file:/tmp/spark-fc875722-f62a-4b08-bcee-b073a69339cf/__spark_conf__4906173137327217071.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1380/__spark_conf__.zip
+21/06/07 15:28:17 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:28:17 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:28:17 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:28:17 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:28:17 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:28:17 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1707599200_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:28:17 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16066 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:28:18 INFO yarn.Client: Submitting application application_1617755808746_1380 to ResourceManager
+21/06/07 15:28:19 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1380
+21/06/07 15:28:20 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:20 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036498813
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1380/
+	 user: knoxdavi
+21/06/07 15:28:21 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:22 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:23 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:24 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:25 INFO yarn.Client: Application report for application_1617755808746_1380 (state: ACCEPTED)
+21/06/07 15:28:26 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:26 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 37747
+	 queue: default
+	 start time: 1623036498813
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1380/
+	 user: knoxdavi
+21/06/07 15:28:27 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:28 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:29 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:30 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:31 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:32 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:33 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:34 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:35 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:36 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:37 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:38 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:39 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:40 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:41 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:42 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:43 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:44 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:45 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:46 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:47 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:48 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:49 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:50 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:51 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:52 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:53 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:54 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:55 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:56 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:57 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:58 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:28:59 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:00 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:01 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:02 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:03 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:04 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:05 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:06 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:07 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:08 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:09 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:10 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:11 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:12 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:13 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:14 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:15 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:16 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:17 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:18 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:19 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:20 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:21 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:22 INFO yarn.Client: Application report for application_1617755808746_1380 (state: RUNNING)
+21/06/07 15:29:23 INFO yarn.Client: Application report for application_1617755808746_1380 (state: FINISHED)
+21/06/07 15:29:23 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 37747
+	 queue: default
+	 start time: 1623036498813
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1380/
+	 user: knoxdavi
+21/06/07 15:29:23 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:29:23 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-fc875722-f62a-4b08-bcee-b073a69339cf
+21/06/07 15:29:23 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-87c28aa9-bf3e-40ef-b905-66a16226009e
+21/06/07 15:29:25 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:29:25 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:29:25 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:29:25 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:29:25 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:29:25 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:29:25 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:29:25 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:29:25 INFO yarn.Client: Uploading resource file:/tmp/spark-43ecec2f-3dfd-4634-82d8-8902667d028a/__spark_libs__6053933861399702160.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1381/__spark_libs__6053933861399702160.zip
+21/06/07 15:29:26 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1381/bdce1_lr6.jar
+21/06/07 15:29:26 INFO yarn.Client: Uploading resource file:/tmp/spark-43ecec2f-3dfd-4634-82d8-8902667d028a/__spark_conf__191749909456332945.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1381/__spark_conf__.zip
+21/06/07 15:29:26 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:29:26 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:29:26 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:29:26 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:29:26 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:29:26 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-3496185_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:29:26 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16067 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:29:27 INFO yarn.Client: Submitting application application_1617755808746_1381 to ResourceManager
+21/06/07 15:29:27 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1381
+21/06/07 15:29:28 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:28 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036567698
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1381/
+	 user: knoxdavi
+21/06/07 15:29:29 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:30 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:31 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:32 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:33 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:34 INFO yarn.Client: Application report for application_1617755808746_1381 (state: ACCEPTED)
+21/06/07 15:29:35 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:35 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 34791
+	 queue: default
+	 start time: 1623036567698
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1381/
+	 user: knoxdavi
+21/06/07 15:29:36 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:37 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:38 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:39 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:40 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:41 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:42 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:43 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:44 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:45 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:46 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:47 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:48 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:49 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:50 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:51 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:53 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:54 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:55 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:56 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:57 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:58 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:29:59 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:00 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:01 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:02 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:03 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:04 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:05 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:06 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:07 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:08 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:09 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:10 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:11 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:12 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:13 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:14 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:15 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:16 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:17 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:18 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:19 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:20 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:21 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:22 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:23 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:24 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:25 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:26 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:27 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:28 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:29 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:30 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:31 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:32 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:33 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:34 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:35 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:36 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:37 INFO yarn.Client: Application report for application_1617755808746_1381 (state: RUNNING)
+21/06/07 15:30:38 INFO yarn.Client: Application report for application_1617755808746_1381 (state: FINISHED)
+21/06/07 15:30:38 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 34791
+	 queue: default
+	 start time: 1623036567698
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1381/
+	 user: knoxdavi
+21/06/07 15:30:38 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:30:38 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-a0cd4e20-ba06-4486-8858-b95aa08492c3
+21/06/07 15:30:38 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-43ecec2f-3dfd-4634-82d8-8902667d028a
+21/06/07 15:30:40 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:30:40 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:30:40 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:30:40 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:30:40 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:30:40 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:30:40 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:30:40 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:30:40 INFO yarn.Client: Uploading resource file:/tmp/spark-c72c2bdb-16da-4ea7-b38e-26542e0dae16/__spark_libs__4624171031850743826.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1384/__spark_libs__4624171031850743826.zip
+21/06/07 15:30:41 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1384/bdce1_lr6.jar
+21/06/07 15:30:41 INFO yarn.Client: Uploading resource file:/tmp/spark-c72c2bdb-16da-4ea7-b38e-26542e0dae16/__spark_conf__1508358047247986311.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1384/__spark_conf__.zip
+21/06/07 15:30:41 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:30:41 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:30:41 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:30:41 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:30:41 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:30:41 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_300758362_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:30:41 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16069 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:30:42 INFO yarn.Client: Submitting application application_1617755808746_1384 to ResourceManager
+21/06/07 15:30:42 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1384
+21/06/07 15:30:43 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:43 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: [Mon Jun 07 15:30:42 +1200 2021] Application is added to the scheduler and is not yet activated. Queue's AM resource limit exceeded.  Details : AM Partition = <DEFAULT_PARTITION>; AM Resource Request = <memory:2048, vCores:1>; Queue Resource Limit for AM = <memory:7168, vCores:1>; User AM Resource Limit of the queue = <memory:7168, vCores:1>; Queue AM Resource Usage = <memory:6144, vCores:3>; 
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036642691
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1384/
+	 user: knoxdavi
+21/06/07 15:30:44 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:45 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:46 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:47 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:48 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:49 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:50 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:51 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:52 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:53 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:54 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:55 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:56 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:57 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:58 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:30:59 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:00 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:01 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:02 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:03 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:04 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:05 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:06 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:07 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:08 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:09 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:10 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:11 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:12 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:13 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:14 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:15 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:16 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:17 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:18 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:19 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:20 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:21 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:22 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:23 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:24 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:25 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:26 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:27 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:28 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:29 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:30 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:31 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:32 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:33 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:34 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:35 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:36 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:37 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:38 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:39 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:40 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:41 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:42 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:43 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:44 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:45 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:46 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:47 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:48 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:49 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:50 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:51 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:52 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:53 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:54 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:55 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:56 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:57 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:58 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:31:59 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:32:00 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:32:01 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:32:02 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:32:03 INFO yarn.Client: Application report for application_1617755808746_1384 (state: ACCEPTED)
+21/06/07 15:32:04 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:04 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-5.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 46477
+	 queue: default
+	 start time: 1623036642691
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1384/
+	 user: knoxdavi
+21/06/07 15:32:05 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:06 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:07 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:08 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:09 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:10 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:11 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:12 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:13 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:14 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:15 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:16 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:17 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:18 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:19 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:20 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:21 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:22 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:23 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:24 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:25 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:26 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:27 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:28 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:29 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:30 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:31 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:32 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:34 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:35 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:36 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:37 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:38 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:39 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:40 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:41 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:42 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:43 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:44 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:45 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:46 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:47 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:48 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:49 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:50 INFO yarn.Client: Application report for application_1617755808746_1384 (state: RUNNING)
+21/06/07 15:32:51 INFO yarn.Client: Application report for application_1617755808746_1384 (state: FINISHED)
+21/06/07 15:32:51 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-5.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 46477
+	 queue: default
+	 start time: 1623036642691
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1384/
+	 user: knoxdavi
+21/06/07 15:32:51 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:32:51 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9dee14a5-1660-4536-965c-49880f736ba2
+21/06/07 15:32:51 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-c72c2bdb-16da-4ea7-b38e-26542e0dae16
+21/06/07 15:32:53 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:32:53 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:32:53 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:32:53 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:32:53 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:32:53 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:32:53 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:32:53 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:32:54 INFO yarn.Client: Uploading resource file:/tmp/spark-9827219e-baae-4050-8730-816a3e3849f2/__spark_libs__9060773613785208951.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1386/__spark_libs__9060773613785208951.zip
+21/06/07 15:32:55 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1386/bdce1_lr6.jar
+21/06/07 15:32:55 INFO yarn.Client: Uploading resource file:/tmp/spark-9827219e-baae-4050-8730-816a3e3849f2/__spark_conf__3507819848808566906.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1386/__spark_conf__.zip
+21/06/07 15:32:55 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:32:55 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:32:55 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:32:55 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:32:55 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:32:55 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-2096216247_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:32:55 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16071 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:32:56 INFO yarn.Client: Submitting application application_1617755808746_1386 to ResourceManager
+21/06/07 15:32:56 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1386
+21/06/07 15:32:57 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:32:57 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: [Mon Jun 07 15:32:56 +1200 2021] Application is added to the scheduler and is not yet activated. Queue's AM resource limit exceeded.  Details : AM Partition = <DEFAULT_PARTITION>; AM Resource Request = <memory:2048, vCores:1>; Queue Resource Limit for AM = <memory:7168, vCores:1>; User AM Resource Limit of the queue = <memory:7168, vCores:1>; Queue AM Resource Usage = <memory:6144, vCores:3>; 
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036776593
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1386/
+	 user: knoxdavi
+21/06/07 15:32:58 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:32:59 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:00 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:01 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:02 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:03 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:04 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:05 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:06 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:07 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:08 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:09 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:10 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:11 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:12 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:13 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:14 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:15 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:16 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:17 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:18 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:19 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:20 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:21 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:22 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:23 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:24 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:25 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:26 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:27 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:28 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:29 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:30 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:31 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:32 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:33 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:34 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:35 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:36 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:37 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:38 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:39 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:40 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:41 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:42 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:43 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:44 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:45 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:46 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:47 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:48 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:49 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:50 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:51 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:52 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:53 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:54 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:55 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:56 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:57 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:58 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:33:59 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:00 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:01 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:02 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:03 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:04 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:05 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:06 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:07 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:08 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:09 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:10 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:11 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:13 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:14 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:15 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:16 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:17 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:18 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:19 INFO yarn.Client: Application report for application_1617755808746_1386 (state: ACCEPTED)
+21/06/07 15:34:20 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:20 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41677
+	 queue: default
+	 start time: 1623036776593
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1386/
+	 user: knoxdavi
+21/06/07 15:34:21 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:22 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:23 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:24 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:25 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:26 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:27 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:28 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:29 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:30 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:31 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:32 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:33 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:34 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:35 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:36 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:37 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:38 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:39 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:40 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:41 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:42 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:43 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:44 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:45 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:46 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:47 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:48 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:49 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:50 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:51 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:52 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:53 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:54 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:55 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:56 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:57 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:58 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:34:59 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:00 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:01 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:02 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:03 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:04 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:05 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:06 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:07 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:08 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:09 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:10 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:11 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:12 INFO yarn.Client: Application report for application_1617755808746_1386 (state: RUNNING)
+21/06/07 15:35:13 INFO yarn.Client: Application report for application_1617755808746_1386 (state: FINISHED)
+21/06/07 15:35:13 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41677
+	 queue: default
+	 start time: 1623036776593
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1386/
+	 user: knoxdavi
+21/06/07 15:35:13 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:35:13 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-28419851-56ac-40dc-a05d-3d449dbc7de3
+21/06/07 15:35:13 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9827219e-baae-4050-8730-816a3e3849f2
+21/06/07 15:35:15 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/07 15:35:15 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/07 15:35:15 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/07 15:35:15 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/07 15:35:15 INFO yarn.Client: Setting up container launch context for our AM
+21/06/07 15:35:15 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/07 15:35:15 INFO yarn.Client: Preparing resources for our AM container
+21/06/07 15:35:15 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/07 15:35:16 INFO yarn.Client: Uploading resource file:/tmp/spark-57202765-118f-4ca3-8e73-51de5e2327c5/__spark_libs__5551556807655797363.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1388/__spark_libs__5551556807655797363.zip
+21/06/07 15:35:17 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/q2_DK/bdce1_lr6.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1388/bdce1_lr6.jar
+21/06/07 15:35:17 INFO yarn.Client: Uploading resource file:/tmp/spark-57202765-118f-4ca3-8e73-51de5e2327c5/__spark_conf__3871856698116820081.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_1388/__spark_conf__.zip
+21/06/07 15:35:17 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/07 15:35:17 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/07 15:35:17 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/07 15:35:17 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/07 15:35:17 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/07 15:35:17 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-109478048_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/07 15:35:17 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 16073 for knoxdavi on 130.195.4.140:9000
+21/06/07 15:35:19 INFO yarn.Client: Submitting application application_1617755808746_1388 to ResourceManager
+21/06/07 15:35:19 INFO impl.YarnClientImpl: Submitted application application_1617755808746_1388
+21/06/07 15:35:20 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:20 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: [Mon Jun 07 15:35:20 +1200 2021] Application is added to the scheduler and is not yet activated. Queue's AM resource limit exceeded.  Details : AM Partition = <DEFAULT_PARTITION>; AM Resource Request = <memory:2048, vCores:1>; Queue Resource Limit for AM = <memory:7168, vCores:1>; User AM Resource Limit of the queue = <memory:7168, vCores:1>; Queue AM Resource Usage = <memory:6144, vCores:3>; 
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1623036919215
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1388/
+	 user: knoxdavi
+21/06/07 15:35:21 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:22 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:23 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:24 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:25 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:26 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:27 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:28 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:29 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:30 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:31 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:32 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:33 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:34 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:35 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:36 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:37 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:38 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:39 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:40 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:41 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:42 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:43 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:44 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:45 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:46 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:47 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:48 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:49 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:50 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:51 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:52 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:53 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:54 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:55 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:56 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:57 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:58 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:35:59 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:00 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:01 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:02 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:03 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:04 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:05 INFO yarn.Client: Application report for application_1617755808746_1388 (state: ACCEPTED)
+21/06/07 15:36:06 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:06 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39819
+	 queue: default
+	 start time: 1623036919215
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1388/
+	 user: knoxdavi
+21/06/07 15:36:07 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:08 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:09 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:10 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:11 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:12 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:13 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:14 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:15 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:16 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:17 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:18 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:19 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:20 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:21 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:22 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:23 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:24 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:25 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:26 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:27 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:28 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:29 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:30 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:31 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:32 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:33 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:34 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:35 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:36 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:37 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:38 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:39 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:40 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:41 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:42 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:43 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:44 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:45 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:46 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:47 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:48 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:49 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:50 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:51 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:52 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:53 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:54 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:55 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:56 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:57 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:58 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:36:59 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:00 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:01 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:02 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:03 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:04 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:05 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:06 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:07 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:08 INFO yarn.Client: Application report for application_1617755808746_1388 (state: RUNNING)
+21/06/07 15:37:09 INFO yarn.Client: Application report for application_1617755808746_1388 (state: FINISHED)
+21/06/07 15:37:09 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 39819
+	 queue: default
+	 start time: 1623036919215
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_1388/
+	 user: knoxdavi
+21/06/07 15:37:09 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/07 15:37:09 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-f3ab78a1-d7f4-43bd-b56a-aac4e502d20c
+21/06/07 15:37:09 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-57202765-118f-4ca3-8e73-51de5e2327c5
+Completed kdd logistic regression on cluster with random seed 123
+done.

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-for randomSeed in 1 2 3 4 5 6 7 8 9 10 1
+for randomSeed in 1 2 3 4 5 6 7 8 9 10
+#for randomSeed in 1
 do
 	echo "Submitting kdd decision tree to cluster with random seed $randomSeed"
 	sleep 3

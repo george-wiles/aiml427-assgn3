@@ -1,0 +1,2035 @@
+nohup: ignoring input
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 1
+21/06/06 11:31:00 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:31:00 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:31:00 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:31:00 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:31:00 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:31:00 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:31:00 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:31:00 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:31:01 INFO yarn.Client: Uploading resource file:/tmp/spark-10529a4e-0e86-431d-8ad4-313269ea5405/__spark_libs__8069323472228865535.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0806/__spark_libs__8069323472228865535.zip
+21/06/06 11:31:02 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0806/skdd_pl.jar
+21/06/06 11:31:02 INFO yarn.Client: Uploading resource file:/tmp/spark-10529a4e-0e86-431d-8ad4-313269ea5405/__spark_conf__9120960487067673201.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0806/__spark_conf__.zip
+21/06/06 11:31:02 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:31:02 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:31:02 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:31:02 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:31:02 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:31:02 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1366064431_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:31:02 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15500 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:31:03 INFO yarn.Client: Submitting application application_1617755808746_0806 to ResourceManager
+21/06/06 11:31:03 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0806
+21/06/06 11:31:04 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:04 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622935863010
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0806/
+	 user: knoxdavi
+21/06/06 11:31:05 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:06 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:07 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:08 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:09 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:10 INFO yarn.Client: Application report for application_1617755808746_0806 (state: ACCEPTED)
+21/06/06 11:31:11 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:11 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38017
+	 queue: default
+	 start time: 1622935863010
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0806/
+	 user: knoxdavi
+21/06/06 11:31:12 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:13 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:14 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:15 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:16 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:17 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:18 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:19 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:20 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:21 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:22 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:23 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:24 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:25 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:26 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:27 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:28 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:29 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:30 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:31 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:32 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:33 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:34 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:35 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:36 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:37 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:38 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:39 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:40 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:41 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:42 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:43 INFO yarn.Client: Application report for application_1617755808746_0806 (state: RUNNING)
+21/06/06 11:31:44 INFO yarn.Client: Application report for application_1617755808746_0806 (state: FINISHED)
+21/06/06 11:31:44 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38017
+	 queue: default
+	 start time: 1622935863010
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0806/
+	 user: knoxdavi
+21/06/06 11:31:44 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:31:44 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-10529a4e-0e86-431d-8ad4-313269ea5405
+21/06/06 11:31:44 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-cc7c3e1a-b4c7-4a06-966d-b4a299126707
+Completed kdd logistic regression on cluster with random seed 1
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 2
+21/06/06 11:31:49 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:31:49 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:31:49 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:31:49 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:31:49 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:31:49 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:31:49 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:31:49 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:31:50 INFO yarn.Client: Uploading resource file:/tmp/spark-b42c79db-76bc-49bf-85d2-f823b946f289/__spark_libs__7009415861263943394.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0807/__spark_libs__7009415861263943394.zip
+21/06/06 11:31:50 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0807/skdd_pl.jar
+21/06/06 11:31:50 INFO yarn.Client: Uploading resource file:/tmp/spark-b42c79db-76bc-49bf-85d2-f823b946f289/__spark_conf__82174437999283861.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0807/__spark_conf__.zip
+21/06/06 11:31:51 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:31:51 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:31:51 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:31:51 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:31:51 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:31:51 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-744716791_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:31:51 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15501 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:31:51 INFO yarn.Client: Submitting application application_1617755808746_0807 to ResourceManager
+21/06/06 11:31:52 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0807
+21/06/06 11:31:53 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:53 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622935911955
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0807/
+	 user: knoxdavi
+21/06/06 11:31:54 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:55 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:56 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:57 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:58 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:31:59 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:00 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:00 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 32841
+	 queue: default
+	 start time: 1622935911955
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0807/
+	 user: knoxdavi
+21/06/06 11:32:01 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:02 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:03 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:04 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:05 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:06 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:07 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:08 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:09 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:10 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:11 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:12 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:13 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:14 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:15 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:16 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:17 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:18 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:19 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:20 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:21 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:22 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:23 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:24 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:25 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:26 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:27 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:28 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:29 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:30 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:31 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:32 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:33 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:34 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:35 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:36 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:37 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:37 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622935911955
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0807/
+	 user: knoxdavi
+21/06/06 11:32:38 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:39 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:40 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:41 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:42 INFO yarn.Client: Application report for application_1617755808746_0807 (state: ACCEPTED)
+21/06/06 11:32:43 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:43 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 44569
+	 queue: default
+	 start time: 1622935911955
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0807/
+	 user: knoxdavi
+21/06/06 11:32:44 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:45 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:46 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:47 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:48 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:49 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:50 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:51 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:52 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:53 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:54 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:55 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:56 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:57 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:58 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:32:59 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:00 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:01 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:02 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:03 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:04 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:05 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:06 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:07 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:08 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:09 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:10 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:11 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:12 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:13 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:14 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:15 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:16 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:17 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:18 INFO yarn.Client: Application report for application_1617755808746_0807 (state: RUNNING)
+21/06/06 11:33:19 INFO yarn.Client: Application report for application_1617755808746_0807 (state: FINISHED)
+21/06/06 11:33:19 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 252.0 failed 4 times, most recent failure: Lost task 0.3 in stage 252.0 (TID 506, co246a-1.ecs.vuw.ac.nz, executor 1): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2228/318338488: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2228/318338488: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 44569
+	 queue: default
+	 start time: 1622935911955
+	 final status: FAILED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0807/
+	 user: knoxdavi
+21/06/06 11:33:19 ERROR yarn.Client: Application diagnostics message: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 252.0 failed 4 times, most recent failure: Lost task 0.3 in stage 252.0 (TID 506, co246a-1.ecs.vuw.ac.nz, executor 1): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2228/318338488: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2228/318338488: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Exception in thread "main" org.apache.spark.SparkException: Application application_1617755808746_0807 finished with failed status
+	at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+	at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+21/06/06 11:33:19 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:33:19 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-103b6ca2-b121-424d-aac7-ff12f74c9524
+21/06/06 11:33:19 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-b42c79db-76bc-49bf-85d2-f823b946f289
+Completed kdd logistic regression on cluster with random seed 2
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 3
+21/06/06 11:33:24 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:33:24 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:33:24 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:33:24 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:33:24 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:33:24 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:33:24 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:33:24 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:33:25 INFO yarn.Client: Uploading resource file:/tmp/spark-6938af02-9119-40db-9276-a763a8a8f30c/__spark_libs__7167190638525787104.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0811/__spark_libs__7167190638525787104.zip
+21/06/06 11:33:26 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0811/skdd_pl.jar
+21/06/06 11:33:26 INFO yarn.Client: Uploading resource file:/tmp/spark-6938af02-9119-40db-9276-a763a8a8f30c/__spark_conf__6351845022431067660.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0811/__spark_conf__.zip
+21/06/06 11:33:26 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:33:26 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:33:26 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:33:26 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:33:26 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:33:26 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-1915817772_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:33:26 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15505 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:33:27 INFO yarn.Client: Submitting application application_1617755808746_0811 to ResourceManager
+21/06/06 11:33:27 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0811
+21/06/06 11:33:28 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:28 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936007473
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0811/
+	 user: knoxdavi
+21/06/06 11:33:29 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:30 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:31 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:32 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:33 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:34 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:35 INFO yarn.Client: Application report for application_1617755808746_0811 (state: ACCEPTED)
+21/06/06 11:33:36 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:36 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-5.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 37145
+	 queue: default
+	 start time: 1622936007473
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0811/
+	 user: knoxdavi
+21/06/06 11:33:37 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:38 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:39 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:40 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:41 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:42 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:43 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:44 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:45 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:46 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:47 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:48 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:49 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:50 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:51 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:52 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:53 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:54 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:55 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:56 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:57 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:58 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:33:59 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:00 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:01 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:02 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:03 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:04 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:05 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:06 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:07 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:08 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:09 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:10 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:11 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:12 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:13 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:14 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:15 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:16 INFO yarn.Client: Application report for application_1617755808746_0811 (state: RUNNING)
+21/06/06 11:34:17 INFO yarn.Client: Application report for application_1617755808746_0811 (state: FINISHED)
+21/06/06 11:34:17 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-5.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 37145
+	 queue: default
+	 start time: 1622936007473
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0811/
+	 user: knoxdavi
+21/06/06 11:34:17 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:34:17 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ab709d9c-35dd-4198-8233-95c459a75bc3
+21/06/06 11:34:17 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-6938af02-9119-40db-9276-a763a8a8f30c
+Completed kdd logistic regression on cluster with random seed 3
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 4
+21/06/06 11:34:23 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:34:23 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:34:23 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:34:23 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:34:23 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:34:23 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:34:23 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:34:23 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:34:24 INFO yarn.Client: Uploading resource file:/tmp/spark-4e7d5b9b-0c3f-4a00-bb96-3fc83cee939a/__spark_libs__9034060072352381028.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0815/__spark_libs__9034060072352381028.zip
+21/06/06 11:34:24 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0815/skdd_pl.jar
+21/06/06 11:34:24 INFO yarn.Client: Uploading resource file:/tmp/spark-4e7d5b9b-0c3f-4a00-bb96-3fc83cee939a/__spark_conf__1530675485098824974.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0815/__spark_conf__.zip
+21/06/06 11:34:25 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:34:25 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:34:25 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:34:25 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:34:25 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:34:25 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_1683155771_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:34:25 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15509 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:34:25 INFO yarn.Client: Submitting application application_1617755808746_0815 to ResourceManager
+21/06/06 11:34:26 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0815
+21/06/06 11:34:27 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:27 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936065992
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0815/
+	 user: knoxdavi
+21/06/06 11:34:28 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:29 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:30 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:31 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:32 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:34:33 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:33 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-5.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 44501
+	 queue: default
+	 start time: 1622936065992
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0815/
+	 user: knoxdavi
+21/06/06 11:34:34 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:35 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:36 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:37 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:38 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:39 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:40 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:41 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:42 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:43 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:44 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:45 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:46 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:47 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:48 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:49 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:50 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:51 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:52 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:53 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:54 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:55 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:56 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:57 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:58 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:34:59 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:00 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:01 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:02 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:03 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:04 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:05 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:06 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:07 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:08 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:08 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: [Sun Jun 06 11:35:08 +1200 2021] Scheduler has assigned a container for AM, waiting for AM container to be launched
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936065992
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0815/
+	 user: knoxdavi
+21/06/06 11:35:09 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:10 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:11 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:12 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:13 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:14 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:15 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:16 INFO yarn.Client: Application report for application_1617755808746_0815 (state: ACCEPTED)
+21/06/06 11:35:17 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:17 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38143
+	 queue: default
+	 start time: 1622936065992
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0815/
+	 user: knoxdavi
+21/06/06 11:35:18 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:19 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:20 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:21 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:22 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:23 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:24 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:25 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:26 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:27 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:28 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:29 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:30 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:31 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:32 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:33 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:34 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:35 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:36 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:37 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:38 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:39 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:40 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:41 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:42 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:43 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:44 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:45 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:46 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:47 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:48 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:49 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:50 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:51 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:52 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:53 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:54 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:55 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:56 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:57 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:58 INFO yarn.Client: Application report for application_1617755808746_0815 (state: RUNNING)
+21/06/06 11:35:59 INFO yarn.Client: Application report for application_1617755808746_0815 (state: FINISHED)
+21/06/06 11:35:59 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 281.0 failed 4 times, most recent failure: Lost task 0.3 in stage 281.0 (TID 564, co246a-3.ecs.vuw.ac.nz, executor 1): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2239/556966662: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2239/556966662: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38143
+	 queue: default
+	 start time: 1622936065992
+	 final status: FAILED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0815/
+	 user: knoxdavi
+21/06/06 11:35:59 INFO yarn.Client: Deleted staging directory hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0815
+21/06/06 11:35:59 ERROR yarn.Client: Application diagnostics message: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 281.0 failed 4 times, most recent failure: Lost task 0.3 in stage 281.0 (TID 564, co246a-3.ecs.vuw.ac.nz, executor 1): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2239/556966662: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2239/556966662: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Exception in thread "main" org.apache.spark.SparkException: Application application_1617755808746_0815 finished with failed status
+	at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+	at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+21/06/06 11:35:59 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:35:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-8f775498-5460-47a3-b0c3-f8130f8523cb
+21/06/06 11:35:59 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-4e7d5b9b-0c3f-4a00-bb96-3fc83cee939a
+Completed kdd logistic regression on cluster with random seed 4
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 5
+21/06/06 11:36:04 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:36:04 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:36:04 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:36:04 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:36:04 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:36:04 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:36:04 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:36:04 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:36:05 INFO yarn.Client: Uploading resource file:/tmp/spark-d13e098c-c1cb-4772-b5bb-778f74b82ef1/__spark_libs__1292117178278367706.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0819/__spark_libs__1292117178278367706.zip
+21/06/06 11:36:05 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0819/skdd_pl.jar
+21/06/06 11:36:05 INFO yarn.Client: Uploading resource file:/tmp/spark-d13e098c-c1cb-4772-b5bb-778f74b82ef1/__spark_conf__3802881726754931438.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0819/__spark_conf__.zip
+21/06/06 11:36:05 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:36:05 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:36:05 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:36:05 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:36:05 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:36:06 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-642387112_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:36:06 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15513 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:36:06 INFO yarn.Client: Submitting application application_1617755808746_0819 to ResourceManager
+21/06/06 11:36:07 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0819
+21/06/06 11:36:08 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:08 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936166833
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0819/
+	 user: knoxdavi
+21/06/06 11:36:09 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:10 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:11 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:12 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:12 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 34065
+	 queue: default
+	 start time: 1622936166833
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0819/
+	 user: knoxdavi
+21/06/06 11:36:13 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:14 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:15 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:16 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:17 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:18 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:19 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:20 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:21 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:22 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:23 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:24 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:25 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:26 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:27 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:28 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:29 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:30 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:31 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:32 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:33 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:34 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:35 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:36 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:37 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:38 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:39 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:40 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:41 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:42 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:43 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:44 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:45 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:46 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:47 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:48 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:49 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:50 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:51 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:52 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:36:53 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:53 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936166833
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0819/
+	 user: knoxdavi
+21/06/06 11:36:54 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:55 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:56 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:57 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:58 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:36:59 INFO yarn.Client: Application report for application_1617755808746_0819 (state: ACCEPTED)
+21/06/06 11:37:00 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:00 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38097
+	 queue: default
+	 start time: 1622936166833
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0819/
+	 user: knoxdavi
+21/06/06 11:37:01 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:02 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:03 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:04 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:05 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:06 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:07 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:08 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:09 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:10 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:11 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:12 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:13 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:14 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:15 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:16 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:17 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:18 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:19 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:20 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:21 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:22 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:23 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:24 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:25 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:26 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:27 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:28 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:29 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:30 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:31 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:32 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:33 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:34 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:35 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:36 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:37 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:38 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:39 INFO yarn.Client: Application report for application_1617755808746_0819 (state: RUNNING)
+21/06/06 11:37:40 INFO yarn.Client: Application report for application_1617755808746_0819 (state: FINISHED)
+21/06/06 11:37:40 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 180.0 failed 4 times, most recent failure: Lost task 0.3 in stage 180.0 (TID 362, co246a-6.ecs.vuw.ac.nz, executor 2): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2232/1486429195: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2232/1486429195: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+	 ApplicationMaster host: co246a-3.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38097
+	 queue: default
+	 start time: 1622936166833
+	 final status: FAILED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0819/
+	 user: knoxdavi
+21/06/06 11:37:40 ERROR yarn.Client: Application diagnostics message: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 180.0 failed 4 times, most recent failure: Lost task 0.3 in stage 180.0 (TID 362, co246a-6.ecs.vuw.ac.nz, executor 2): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2232/1486429195: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2232/1486429195: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Exception in thread "main" org.apache.spark.SparkException: Application application_1617755808746_0819 finished with failed status
+	at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+	at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+21/06/06 11:37:40 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:37:40 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-24e4550e-4f43-4d5f-b05c-60698135e0d1
+21/06/06 11:37:40 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-d13e098c-c1cb-4772-b5bb-778f74b82ef1
+Completed kdd logistic regression on cluster with random seed 5
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 6
+21/06/06 11:37:45 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:37:45 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:37:45 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:37:45 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:37:45 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:37:45 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:37:45 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:37:46 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:37:46 INFO yarn.Client: Uploading resource file:/tmp/spark-a74afbff-a7e7-4047-a45e-9541a91a2011/__spark_libs__1956552096278625558.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0823/__spark_libs__1956552096278625558.zip
+21/06/06 11:37:47 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0823/skdd_pl.jar
+21/06/06 11:37:47 INFO yarn.Client: Uploading resource file:/tmp/spark-a74afbff-a7e7-4047-a45e-9541a91a2011/__spark_conf__6884351621972357218.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0823/__spark_conf__.zip
+21/06/06 11:37:47 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:37:47 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:37:47 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:37:47 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:37:47 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:37:47 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-595984819_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:37:47 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15517 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:37:48 INFO yarn.Client: Submitting application application_1617755808746_0823 to ResourceManager
+21/06/06 11:37:48 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0823
+21/06/06 11:37:49 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:49 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936268777
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0823/
+	 user: knoxdavi
+21/06/06 11:37:51 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:52 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:53 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:54 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:55 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:56 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:57 INFO yarn.Client: Application report for application_1617755808746_0823 (state: ACCEPTED)
+21/06/06 11:37:58 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:37:58 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 34683
+	 queue: default
+	 start time: 1622936268777
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0823/
+	 user: knoxdavi
+21/06/06 11:37:59 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:00 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:01 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:02 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:03 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:04 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:05 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:06 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:07 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:08 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:09 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:10 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:11 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:12 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:13 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:14 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:15 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:16 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:17 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:18 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:19 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:20 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:21 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:22 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:23 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:24 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:25 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:26 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:27 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:28 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:29 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:30 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:31 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:32 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:33 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:34 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:35 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:36 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:37 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:38 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:39 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:40 INFO yarn.Client: Application report for application_1617755808746_0823 (state: RUNNING)
+21/06/06 11:38:41 INFO yarn.Client: Application report for application_1617755808746_0823 (state: FINISHED)
+21/06/06 11:38:41 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-8.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 34683
+	 queue: default
+	 start time: 1622936268777
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0823/
+	 user: knoxdavi
+21/06/06 11:38:41 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:38:41 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-a74afbff-a7e7-4047-a45e-9541a91a2011
+21/06/06 11:38:41 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-d16cb5a7-73c7-4533-8b1d-5b63fd608dda
+Completed kdd logistic regression on cluster with random seed 6
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 7
+21/06/06 11:38:46 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:38:46 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:38:47 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:38:47 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:38:47 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:38:47 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:38:47 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:38:47 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:38:47 INFO yarn.Client: Uploading resource file:/tmp/spark-c3208321-8033-4c97-a55a-590c386d8b6a/__spark_libs__3918707680197550472.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0826/__spark_libs__3918707680197550472.zip
+21/06/06 11:38:48 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0826/skdd_pl.jar
+21/06/06 11:38:48 INFO yarn.Client: Uploading resource file:/tmp/spark-c3208321-8033-4c97-a55a-590c386d8b6a/__spark_conf__6737640382012799656.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0826/__spark_conf__.zip
+21/06/06 11:38:48 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:38:48 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:38:48 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:38:48 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:38:48 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:38:49 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_2121841787_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:38:49 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15520 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:38:50 INFO yarn.Client: Submitting application application_1617755808746_0826 to ResourceManager
+21/06/06 11:38:50 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0826
+21/06/06 11:38:51 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:51 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936330193
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0826/
+	 user: knoxdavi
+21/06/06 11:38:52 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:53 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:54 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:55 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:56 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:57 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:58 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:38:59 INFO yarn.Client: Application report for application_1617755808746_0826 (state: ACCEPTED)
+21/06/06 11:39:00 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:00 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41329
+	 queue: default
+	 start time: 1622936330193
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0826/
+	 user: knoxdavi
+21/06/06 11:39:01 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:02 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:03 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:04 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:05 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:06 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:07 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:08 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:09 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:10 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:11 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:12 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:13 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:14 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:15 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:16 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:17 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:18 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:19 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:20 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:21 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:22 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:23 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:24 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:25 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:26 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:27 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:28 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:29 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:30 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:31 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:32 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:33 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:34 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:35 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:36 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:37 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:38 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:39 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:40 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:41 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:42 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:43 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:44 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:45 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:46 INFO yarn.Client: Application report for application_1617755808746_0826 (state: RUNNING)
+21/06/06 11:39:47 INFO yarn.Client: Application report for application_1617755808746_0826 (state: FINISHED)
+21/06/06 11:39:47 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41329
+	 queue: default
+	 start time: 1622936330193
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0826/
+	 user: knoxdavi
+21/06/06 11:39:47 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:39:47 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-c3208321-8033-4c97-a55a-590c386d8b6a
+21/06/06 11:39:47 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-7cd37d78-2569-48b7-aeaa-70246e502edf
+Completed kdd logistic regression on cluster with random seed 7
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 8
+21/06/06 11:39:52 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:39:52 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:39:52 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:39:52 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:39:52 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:39:52 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:39:52 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:39:52 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:39:53 INFO yarn.Client: Uploading resource file:/tmp/spark-df44a2e5-3d11-40db-9da9-2a032efb4c71/__spark_libs__6210497409670977283.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0830/__spark_libs__6210497409670977283.zip
+21/06/06 11:39:53 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0830/skdd_pl.jar
+21/06/06 11:39:54 INFO yarn.Client: Uploading resource file:/tmp/spark-df44a2e5-3d11-40db-9da9-2a032efb4c71/__spark_conf__160933841977137681.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0830/__spark_conf__.zip
+21/06/06 11:39:54 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:39:54 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:39:54 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:39:54 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:39:54 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:39:54 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-686261358_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:39:54 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15524 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:39:54 INFO yarn.Client: Submitting application application_1617755808746_0830 to ResourceManager
+21/06/06 11:39:55 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0830
+21/06/06 11:39:56 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:39:56 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936394987
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0830/
+	 user: knoxdavi
+21/06/06 11:39:57 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:39:58 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:39:59 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:00 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:01 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:02 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:03 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:04 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:05 INFO yarn.Client: Application report for application_1617755808746_0830 (state: ACCEPTED)
+21/06/06 11:40:06 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:06 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-2.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38619
+	 queue: default
+	 start time: 1622936394987
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0830/
+	 user: knoxdavi
+21/06/06 11:40:07 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:08 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:09 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:10 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:11 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:12 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:13 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:14 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:15 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:16 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:17 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:18 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:19 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:20 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:21 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:22 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:23 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:24 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:25 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:26 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:27 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:28 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:29 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:30 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:31 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:32 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:33 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:34 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:35 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:36 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:37 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:38 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:39 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:40 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:41 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:42 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:43 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:44 INFO yarn.Client: Application report for application_1617755808746_0830 (state: RUNNING)
+21/06/06 11:40:45 INFO yarn.Client: Application report for application_1617755808746_0830 (state: FINISHED)
+21/06/06 11:40:45 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-2.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 38619
+	 queue: default
+	 start time: 1622936394987
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0830/
+	 user: knoxdavi
+21/06/06 11:40:45 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:40:45 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-b522d54c-2f75-45fd-b8cb-38d283fa1cfa
+21/06/06 11:40:45 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-df44a2e5-3d11-40db-9da9-2a032efb4c71
+Completed kdd logistic regression on cluster with random seed 8
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 9
+21/06/06 11:40:50 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:40:51 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:40:51 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:40:51 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:40:51 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:40:51 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:40:51 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:40:51 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:40:51 INFO yarn.Client: Uploading resource file:/tmp/spark-d3c1a700-fbaa-40a2-877d-d2de0b67dd43/__spark_libs__1127580731051615628.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0831/__spark_libs__1127580731051615628.zip
+21/06/06 11:40:52 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0831/skdd_pl.jar
+21/06/06 11:40:52 INFO yarn.Client: Uploading resource file:/tmp/spark-d3c1a700-fbaa-40a2-877d-d2de0b67dd43/__spark_conf__934746993652229381.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0831/__spark_conf__.zip
+21/06/06 11:40:52 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:40:52 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:40:52 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:40:52 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:40:52 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:40:52 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-157811469_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:40:52 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15525 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:40:53 INFO yarn.Client: Submitting application application_1617755808746_0831 to ResourceManager
+21/06/06 11:40:54 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0831
+21/06/06 11:40:55 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:40:55 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936453919
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0831/
+	 user: knoxdavi
+21/06/06 11:40:56 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:40:57 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:40:58 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:40:59 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:41:00 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:41:01 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:41:02 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:41:03 INFO yarn.Client: Application report for application_1617755808746_0831 (state: ACCEPTED)
+21/06/06 11:41:04 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:04 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41355
+	 queue: default
+	 start time: 1622936453919
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0831/
+	 user: knoxdavi
+21/06/06 11:41:05 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:06 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:07 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:08 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:09 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:10 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:11 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:12 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:13 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:14 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:15 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:16 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:17 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:18 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:19 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:20 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:21 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:22 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:23 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:24 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:25 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:26 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:27 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:28 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:29 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:30 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:31 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:32 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:33 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:34 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:35 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:36 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:37 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:38 INFO yarn.Client: Application report for application_1617755808746_0831 (state: RUNNING)
+21/06/06 11:41:39 INFO yarn.Client: Application report for application_1617755808746_0831 (state: FINISHED)
+21/06/06 11:41:39 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-7.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 41355
+	 queue: default
+	 start time: 1622936453919
+	 final status: SUCCEEDED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0831/
+	 user: knoxdavi
+21/06/06 11:41:39 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:41:39 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-d3c1a700-fbaa-40a2-877d-d2de0b67dd43
+21/06/06 11:41:39 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-da3ff1b7-7d3d-4e41-8600-bf9234a8880a
+Completed kdd logistic regression on cluster with random seed 9
+Submitting kdd logistic regression (with pl&ohe) to cluster with random seed 10
+21/06/06 11:41:44 INFO client.RMProxy: Connecting to ResourceManager at co246a-9.ecs.vuw.ac.nz/130.195.4.139:8032
+21/06/06 11:41:44 INFO yarn.Client: Requesting a new application from cluster with 8 NodeManagers
+21/06/06 11:41:44 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+21/06/06 11:41:44 INFO yarn.Client: Will allocate AM container, with 1408 MB memory including 384 MB overhead
+21/06/06 11:41:44 INFO yarn.Client: Setting up container launch context for our AM
+21/06/06 11:41:44 INFO yarn.Client: Setting up the launch environment for our AM container
+21/06/06 11:41:44 INFO yarn.Client: Preparing resources for our AM container
+21/06/06 11:41:44 WARN yarn.Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+21/06/06 11:41:45 INFO yarn.Client: Uploading resource file:/tmp/spark-8161530f-c39e-47d5-8f85-9d2e25e0501e/__spark_libs__1946933849963861004.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0832/__spark_libs__1946933849963861004.zip
+21/06/06 11:41:45 INFO yarn.Client: Uploading resource file:/am/kings/home1/knoxdavi/AIML427/Assignment3/Q1/aiml427-assgn3/src/scripts/skdd_pl.jar -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0832/skdd_pl.jar
+21/06/06 11:41:45 INFO yarn.Client: Uploading resource file:/tmp/spark-8161530f-c39e-47d5-8f85-9d2e25e0501e/__spark_conf__8489261407433618207.zip -> hdfs://co246a-a.ecs.vuw.ac.nz:9000/user/knoxdavi/.sparkStaging/application_1617755808746_0832/__spark_conf__.zip
+21/06/06 11:41:45 INFO spark.SecurityManager: Changing view acls to: knoxdavi
+21/06/06 11:41:45 INFO spark.SecurityManager: Changing modify acls to: knoxdavi
+21/06/06 11:41:45 INFO spark.SecurityManager: Changing view acls groups to: 
+21/06/06 11:41:45 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/06/06 11:41:45 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(knoxdavi); groups with view permissions: Set(); users  with modify permissions: Set(knoxdavi); groups with modify permissions: Set()
+21/06/06 11:41:45 INFO security.HadoopFSDelegationTokenProvider: getting token for: DFS[DFSClient[clientName=DFSClient_NONMAPREDUCE_-334996746_1, ugi=knoxdavi@ECS.VUW.AC.NZ (auth:KERBEROS)]]
+21/06/06 11:41:45 INFO hdfs.DFSClient: Created HDFS_DELEGATION_TOKEN token 15526 for knoxdavi on 130.195.4.140:9000
+21/06/06 11:41:46 INFO yarn.Client: Submitting application application_1617755808746_0832 to ResourceManager
+21/06/06 11:41:47 INFO impl.YarnClientImpl: Submitted application application_1617755808746_0832
+21/06/06 11:41:48 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:48 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936506845
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0832/
+	 user: knoxdavi
+21/06/06 11:41:49 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:50 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:51 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:52 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:53 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:54 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:41:55 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:41:55 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-4.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 33803
+	 queue: default
+	 start time: 1622936506845
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0832/
+	 user: knoxdavi
+21/06/06 11:41:56 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:41:57 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:41:58 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:41:59 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:00 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:01 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:02 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:03 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:04 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:05 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:06 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:07 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:08 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:09 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:10 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:11 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:12 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:13 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:14 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:15 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:16 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:17 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:18 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:19 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:20 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:21 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:22 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:23 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:24 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:25 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:26 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:27 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:28 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:42:28 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1622936506845
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0832/
+	 user: knoxdavi
+21/06/06 11:42:29 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:42:30 INFO yarn.Client: Application report for application_1617755808746_0832 (state: ACCEPTED)
+21/06/06 11:42:31 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:31 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: N/A
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 35691
+	 queue: default
+	 start time: 1622936506845
+	 final status: UNDEFINED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0832/
+	 user: knoxdavi
+21/06/06 11:42:32 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:33 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:34 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:35 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:36 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:37 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:38 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:39 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:40 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:41 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:42 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:43 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:44 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:45 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:46 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:47 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:48 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:49 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:50 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:51 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:52 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:53 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:54 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:55 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:56 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:57 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:58 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:42:59 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:00 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:01 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:02 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:03 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:04 INFO yarn.Client: Application report for application_1617755808746_0832 (state: RUNNING)
+21/06/06 11:43:05 INFO yarn.Client: Application report for application_1617755808746_0832 (state: FINISHED)
+21/06/06 11:43:05 INFO yarn.Client: 
+	 client token: Token { kind: YARN_CLIENT_TOKEN, service:  }
+	 diagnostics: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 192.0 failed 4 times, most recent failure: Lost task 0.3 in stage 192.0 (TID 386, co246a-7.ecs.vuw.ac.nz, executor 2): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2234/1478555072: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2234/1478555072: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+	 ApplicationMaster host: co246a-1.ecs.vuw.ac.nz
+	 ApplicationMaster RPC port: 35691
+	 queue: default
+	 start time: 1622936506845
+	 final status: FAILED
+	 tracking URL: http://co246a-9.ecs.vuw.ac.nz:8088/proxy/application_1617755808746_0832/
+	 user: knoxdavi
+21/06/06 11:43:05 ERROR yarn.Client: Application diagnostics message: User class threw exception: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 192.0 failed 4 times, most recent failure: Lost task 0.3 in stage 192.0 (TID 386, co246a-7.ecs.vuw.ac.nz, executor 2): org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2234/1478555072: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:1889)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:1877)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:1876)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1876)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:926)
+	at scala.Option.foreach(Option.scala:274)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:926)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2110)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2059)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2048)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:737)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2061)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2082)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2101)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.rdd.PairRDDFunctions.$anonfun$collectAsMap$1(PairRDDFunctions.scala:743)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.PairRDDFunctions.collectAsMap(PairRDDFunctions.scala:742)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass$lzycompute(MulticlassMetrics.scala:47)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.tpByClass(MulticlassMetrics.scala:44)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy$lzycompute(MulticlassMetrics.scala:168)
+	at org.apache.spark.mllib.evaluation.MulticlassMetrics.accuracy(MulticlassMetrics.scala:168)
+	at org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator.evaluate(MulticlassClassificationEvaluator.scala:87)
+	at q1.pipeline_SparkLoadLinearRegression.main(pipeline_SparkLoadLinearRegression.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.spark.deploy.yarn.ApplicationMaster$$anon$2.run(ApplicationMaster.scala:684)
+Caused by: org.apache.spark.SparkException: Failed to execute user defined function(OneHotEncoderModel$$Lambda$2234/1478555072: (double, int) => struct<type:tinyint,size:int,indices:array<int>,values:array<double>>)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anon$2.hasNext(WholeStageCodegenExec.scala:636)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:458)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:191)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:62)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:99)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:55)
+	at org.apache.spark.scheduler.Task.run(Task.scala:121)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:411)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Unseen value: 3.0. To handle unseen values, set Param handleInvalid to keep.
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1(OneHotEncoderEstimator.scala:258)
+	at org.apache.spark.ml.feature.OneHotEncoderModel.$anonfun$encoder$1$adapted(OneHotEncoderEstimator.scala:243)
+	... 18 more
+
+Exception in thread "main" org.apache.spark.SparkException: Application application_1617755808746_0832 finished with failed status
+	at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+	at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+21/06/06 11:43:05 INFO util.ShutdownHookManager: Shutdown hook called
+21/06/06 11:43:05 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-15909772-b1af-4a2d-a3c9-fda3c24172fb
+21/06/06 11:43:05 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-8161530f-c39e-47d5-8f85-9d2e25e0501e
+Completed kdd logistic regression on cluster with random seed 10
+done.

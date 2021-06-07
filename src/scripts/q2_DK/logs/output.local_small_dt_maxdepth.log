@@ -1,0 +1,140 @@
+InputFile: q2input2/smallset.csv
+Number of Hashing Features: 1000
+Use Scaling: 0
+Use PCA: 0
+pcaK: 1
+dtMaxDepth: 5
+Random Seed: 123
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|              review|sentiment|indexedSentiment|               words|            filtered|         rawFeatures|rawPrediction|         probability|prediction|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|"""American Night...| negative|             1.0|["""american, nig...|["""american, nig...|(1000,[24,25,34,6...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"""Ardh Satya"" i...| positive|             0.0|["""ardh, satya""...|["""ardh, satya""...|(1000,[2,3,10,20,...|    [5.0,9.0]|[0.35714285714285...|       1.0|
+|"""Crossfire"" is...| positive|             0.0|["""crossfire"", ...|["""crossfire"", ...|(1000,[3,5,7,8,11...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"""Lost""; ""24""...| positive|             0.0|["""lost"";, ""24...|["""lost"";, ""24...|(1000,[0,14,27,31...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"""Milo"" is yet ...| negative|             1.0|["""milo"", is, y...|["""milo"", yet, ...|(1000,[19,21,29,4...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"""The Danish Bla...| negative|             1.0|["""the, danish, ...|["""the, danish, ...|(1000,[1,3,21,44,...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"""ZZZZZZZZZZZZZZ...| negative|             1.0|["""zzzzzzzzzzzzz...|["""zzzzzzzzzzzzz...|(1000,[3,9,12,18,...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"'War movie' is a...| positive|             0.0|["'war, movie', i...|["'war, movie', h...|(1000,[3,13,15,17...|    [5.0,9.0]|[0.35714285714285...|       1.0|
+|"<br /><br />I'm ...| negative|             1.0|["<br, /><br, />i...|["<br, /><br, />i...|(1000,[12,15,52,5...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"A fabulous book ...| negative|             1.0|["a, fabulous, bo...|["a, fabulous, bo...|(1000,[3,71,101,1...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"A film for matur...| positive|             0.0|["a, film, for, m...|["a, film, mature...|(1000,[3,9,14,18,...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"A plot that fizz...| negative|             1.0|["a, plot, that, ...|["a, plot, fizzle...|(1000,[20,35,36,3...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"A response to pr...| negative|             1.0|["a, response, to...|["a, response, pr...|(1000,[3,4,17,21,...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"A wonderful litt...| positive|             0.0|["a, wonderful, l...|["a, wonderful, l...|(1000,[5,6,7,44,5...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"Adenoid Hynkel; ...| negative|             1.0|["adenoid, hynkel...|["adenoid, hynkel...|(1000,[3,4,5,6,12...|  [89.0,30.0]|[0.74789915966386...|       0.0|
+|"After a very sca...| negative|             1.0|["after, a, very,...|["after, scary;, ...|(1000,[29,30,41,4...|   [6.0,21.0]|[0.22222222222222...|       1.0|
+|"Ah; another movi...| negative|             1.0|["ah;, another, m...|["ah;, another, m...|(1000,[1,10,11,32...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"All the way thou...| negative|             1.0|["all, the, way, ...|["all, way, thoug...|(1000,[1,6,11,14,...|[164.0,104.0]|[0.61194029850746...|       0.0|
+|"Although I lived...| positive|             0.0|["although, i, li...|["although, lived...|(1000,[3,7,24,36,...|  [13.0,92.0]|[0.12380952380952...|       1.0|
+|"Although it stra...| positive|             0.0|["although, it, s...|["although, stray...|(1000,[1,2,10,13,...|[164.0,104.0]|[0.61194029850746...|       0.0|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+only showing top 20 rows
+
+Training Error = 0.25
+Test Error = 0.4914089347079038
+InputFile: q2input2/smallset.csv
+Number of Hashing Features: 1000
+Use Scaling: 0
+Use PCA: 0
+pcaK: 1
+dtMaxDepth: 10
+Random Seed: 123
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|              review|sentiment|indexedSentiment|               words|            filtered|         rawFeatures|rawPrediction|         probability|prediction|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|"""American Night...| negative|             1.0|["""american, nig...|["""american, nig...|(1000,[24,25,34,6...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"""Ardh Satya"" i...| positive|             0.0|["""ardh, satya""...|["""ardh, satya""...|(1000,[2,3,10,20,...|    [0.0,8.0]|           [0.0,1.0]|       1.0|
+|"""Crossfire"" is...| positive|             0.0|["""crossfire"", ...|["""crossfire"", ...|(1000,[3,5,7,8,11...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"""Lost""; ""24""...| positive|             0.0|["""lost"";, ""24...|["""lost"";, ""24...|(1000,[0,14,27,31...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"""Milo"" is yet ...| negative|             1.0|["""milo"", is, y...|["""milo"", yet, ...|(1000,[19,21,29,4...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"""The Danish Bla...| negative|             1.0|["""the, danish, ...|["""the, danish, ...|(1000,[1,3,21,44,...|   [22.0,0.0]|           [1.0,0.0]|       0.0|
+|"""ZZZZZZZZZZZZZZ...| negative|             1.0|["""zzzzzzzzzzzzz...|["""zzzzzzzzzzzzz...|(1000,[3,9,12,18,...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"'War movie' is a...| positive|             0.0|["'war, movie', i...|["'war, movie', h...|(1000,[3,13,15,17...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"<br /><br />I'm ...| negative|             1.0|["<br, /><br, />i...|["<br, /><br, />i...|(1000,[12,15,52,5...|  [99.0,48.0]|[0.67346938775510...|       0.0|
+|"A fabulous book ...| negative|             1.0|["a, fabulous, bo...|["a, fabulous, bo...|(1000,[3,71,101,1...|  [99.0,48.0]|[0.67346938775510...|       0.0|
+|"A film for matur...| positive|             0.0|["a, film, for, m...|["a, film, mature...|(1000,[3,9,14,18,...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"A plot that fizz...| negative|             1.0|["a, plot, that, ...|["a, plot, fizzle...|(1000,[20,35,36,3...|   [0.0,17.0]|           [0.0,1.0]|       1.0|
+|"A response to pr...| negative|             1.0|["a, response, to...|["a, response, pr...|(1000,[3,4,17,21,...|    [2.0,9.0]|[0.18181818181818...|       1.0|
+|"A wonderful litt...| positive|             0.0|["a, wonderful, l...|["a, wonderful, l...|(1000,[5,6,7,44,5...|  [80.0,10.0]|[0.88888888888888...|       0.0|
+|"Adenoid Hynkel; ...| negative|             1.0|["adenoid, hynkel...|["adenoid, hynkel...|(1000,[3,4,5,6,12...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
+|"After a very sca...| negative|             1.0|["after, a, very,...|["after, scary;, ...|(1000,[29,30,41,4...|   [0.0,19.0]|           [0.0,1.0]|       1.0|
+|"Ah; another movi...| negative|             1.0|["ah;, another, m...|["ah;, another, m...|(1000,[1,10,11,32...|  [99.0,48.0]|[0.67346938775510...|       0.0|
+|"All the way thou...| negative|             1.0|["all, the, way, ...|["all, way, thoug...|(1000,[1,6,11,14,...|    [8.0,0.0]|           [1.0,0.0]|       0.0|
+|"Although I lived...| positive|             0.0|["although, i, li...|["although, lived...|(1000,[3,7,24,36,...|   [3.0,88.0]|[0.03296703296703...|       1.0|
+|"Although it stra...| positive|             0.0|["although, it, s...|["although, stray...|(1000,[1,2,10,13,...|  [99.0,48.0]|[0.67346938775510...|       0.0|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+only showing top 20 rows
+
+Training Error = 0.09463276836158196
+Test Error = 0.429553264604811
+InputFile: q2input2/smallset.csv
+Number of Hashing Features: 1000
+Use Scaling: 0
+Use PCA: 0
+pcaK: 1
+dtMaxDepth: 15
+Random Seed: 123
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|              review|sentiment|indexedSentiment|               words|            filtered|         rawFeatures|rawPrediction|         probability|prediction|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|"""American Night...| negative|             1.0|["""american, nig...|["""american, nig...|(1000,[24,25,34,6...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"""Ardh Satya"" i...| positive|             0.0|["""ardh, satya""...|["""ardh, satya""...|(1000,[2,3,10,20,...|    [0.0,8.0]|           [0.0,1.0]|       1.0|
+|"""Crossfire"" is...| positive|             0.0|["""crossfire"", ...|["""crossfire"", ...|(1000,[3,5,7,8,11...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"""Lost""; ""24""...| positive|             0.0|["""lost"";, ""24...|["""lost"";, ""24...|(1000,[0,14,27,31...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"""Milo"" is yet ...| negative|             1.0|["""milo"", is, y...|["""milo"", yet, ...|(1000,[19,21,29,4...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"""The Danish Bla...| negative|             1.0|["""the, danish, ...|["""the, danish, ...|(1000,[1,3,21,44,...|   [22.0,0.0]|           [1.0,0.0]|       0.0|
+|"""ZZZZZZZZZZZZZZ...| negative|             1.0|["""zzzzzzzzzzzzz...|["""zzzzzzzzzzzzz...|(1000,[3,9,12,18,...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"'War movie' is a...| positive|             0.0|["'war, movie', i...|["'war, movie', h...|(1000,[3,13,15,17...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"<br /><br />I'm ...| negative|             1.0|["<br, /><br, />i...|["<br, /><br, />i...|(1000,[12,15,52,5...|  [89.0,16.0]|[0.84761904761904...|       0.0|
+|"A fabulous book ...| negative|             1.0|["a, fabulous, bo...|["a, fabulous, bo...|(1000,[3,71,101,1...|  [89.0,16.0]|[0.84761904761904...|       0.0|
+|"A film for matur...| positive|             0.0|["a, film, for, m...|["a, film, mature...|(1000,[3,9,14,18,...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"A plot that fizz...| negative|             1.0|["a, plot, that, ...|["a, plot, fizzle...|(1000,[20,35,36,3...|   [0.0,17.0]|           [0.0,1.0]|       1.0|
+|"A response to pr...| negative|             1.0|["a, response, to...|["a, response, pr...|(1000,[3,4,17,21,...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
+|"A wonderful litt...| positive|             0.0|["a, wonderful, l...|["a, wonderful, l...|(1000,[5,6,7,44,5...|   [76.0,2.0]|[0.97435897435897...|       0.0|
+|"Adenoid Hynkel; ...| negative|             1.0|["adenoid, hynkel...|["adenoid, hynkel...|(1000,[3,4,5,6,12...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
+|"After a very sca...| negative|             1.0|["after, a, very,...|["after, scary;, ...|(1000,[29,30,41,4...|   [0.0,19.0]|           [0.0,1.0]|       1.0|
+|"Ah; another movi...| negative|             1.0|["ah;, another, m...|["ah;, another, m...|(1000,[1,10,11,32...|    [0.0,5.0]|           [0.0,1.0]|       1.0|
+|"All the way thou...| negative|             1.0|["all, the, way, ...|["all, way, thoug...|(1000,[1,6,11,14,...|    [8.0,0.0]|           [1.0,0.0]|       0.0|
+|"Although I lived...| positive|             0.0|["although, i, li...|["although, lived...|(1000,[3,7,24,36,...|   [0.0,86.0]|           [0.0,1.0]|       1.0|
+|"Although it stra...| positive|             0.0|["although, it, s...|["although, stray...|(1000,[1,2,10,13,...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+only showing top 20 rows
+
+Training Error = 0.031073446327683607
+Test Error = 0.436426116838488
+InputFile: q2input2/smallset.csv
+Number of Hashing Features: 1000
+Use Scaling: 0
+Use PCA: 0
+pcaK: 1
+dtMaxDepth: 20
+Random Seed: 123
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|              review|sentiment|indexedSentiment|               words|            filtered|         rawFeatures|rawPrediction|         probability|prediction|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+|"""American Night...| negative|             1.0|["""american, nig...|["""american, nig...|(1000,[24,25,34,6...|   [75.0,0.0]|           [1.0,0.0]|       0.0|
+|"""Ardh Satya"" i...| positive|             0.0|["""ardh, satya""...|["""ardh, satya""...|(1000,[2,3,10,20,...|    [0.0,8.0]|           [0.0,1.0]|       1.0|
+|"""Crossfire"" is...| positive|             0.0|["""crossfire"", ...|["""crossfire"", ...|(1000,[3,5,7,8,11...|   [75.0,0.0]|           [1.0,0.0]|       0.0|
+|"""Lost""; ""24""...| positive|             0.0|["""lost"";, ""24...|["""lost"";, ""24...|(1000,[0,14,27,31...|   [75.0,0.0]|           [1.0,0.0]|       0.0|
+|"""Milo"" is yet ...| negative|             1.0|["""milo"", is, y...|["""milo"", yet, ...|(1000,[19,21,29,4...|    [0.0,1.0]|           [0.0,1.0]|       1.0|
+|"""The Danish Bla...| negative|             1.0|["""the, danish, ...|["""the, danish, ...|(1000,[1,3,21,44,...|   [22.0,0.0]|           [1.0,0.0]|       0.0|
+|"""ZZZZZZZZZZZZZZ...| negative|             1.0|["""zzzzzzzzzzzzz...|["""zzzzzzzzzzzzz...|(1000,[3,9,12,18,...|   [75.0,0.0]|           [1.0,0.0]|       0.0|
+|"'War movie' is a...| positive|             0.0|["'war, movie', i...|["'war, movie', h...|(1000,[3,13,15,17...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"<br /><br />I'm ...| negative|             1.0|["<br, /><br, />i...|["<br, /><br, />i...|(1000,[12,15,52,5...|   [85.0,4.0]|[0.95505617977528...|       0.0|
+|"A fabulous book ...| negative|             1.0|["a, fabulous, bo...|["a, fabulous, bo...|(1000,[3,71,101,1...|    [0.0,4.0]|           [0.0,1.0]|       1.0|
+|"A film for matur...| positive|             0.0|["a, film, for, m...|["a, film, mature...|(1000,[3,9,14,18,...|    [3.0,0.0]|           [1.0,0.0]|       0.0|
+|"A plot that fizz...| negative|             1.0|["a, plot, that, ...|["a, plot, fizzle...|(1000,[20,35,36,3...|   [0.0,17.0]|           [0.0,1.0]|       1.0|
+|"A response to pr...| negative|             1.0|["a, response, to...|["a, response, pr...|(1000,[3,4,17,21,...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
+|"A wonderful litt...| positive|             0.0|["a, wonderful, l...|["a, wonderful, l...|(1000,[5,6,7,44,5...|    [0.0,1.0]|           [0.0,1.0]|       1.0|
+|"Adenoid Hynkel; ...| negative|             1.0|["adenoid, hynkel...|["adenoid, hynkel...|(1000,[3,4,5,6,12...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
+|"After a very sca...| negative|             1.0|["after, a, very,...|["after, scary;, ...|(1000,[29,30,41,4...|   [0.0,19.0]|           [0.0,1.0]|       1.0|
+|"Ah; another movi...| negative|             1.0|["ah;, another, m...|["ah;, another, m...|(1000,[1,10,11,32...|    [0.0,5.0]|           [0.0,1.0]|       1.0|
+|"All the way thou...| negative|             1.0|["all, the, way, ...|["all, way, thoug...|(1000,[1,6,11,14,...|    [8.0,0.0]|           [1.0,0.0]|       0.0|
+|"Although I lived...| positive|             0.0|["although, i, li...|["although, lived...|(1000,[3,7,24,36,...|   [0.0,86.0]|           [0.0,1.0]|       1.0|
+|"Although it stra...| positive|             0.0|["although, it, s...|["although, stray...|(1000,[1,2,10,13,...|    [2.0,0.0]|           [1.0,0.0]|       0.0|
++--------------------+---------+----------------+--------------------+--------------------+--------------------+-------------+--------------------+----------+
+only showing top 20 rows
+
+Training Error = 0.007062146892655385
+Test Error = 0.4329896907216495
