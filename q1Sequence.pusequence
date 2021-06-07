@@ -1,0 +1,23 @@
+@startuml
+autonumber
+pipeline_SparkLoadDecisionTree -> SparkSession : create
+pipeline_SparkLoadDecisionTree -> SparkSession : read().format("csv").load
+SparkSession -> DataSet: create
+SparkSession -> DataSet: create
+pipeline_SparkLoadDecisionTree <- DataSet: full
+pipeline_SparkLoadDecisionTree -> DataSet: randomSplit(70:30)
+pipeline_SparkLoadDecisionTree <- DataSet: DataSet[]
+pipeline_SparkLoadDecisionTree -> StringIndexer:
+pipeline_SparkLoadDecisionTree -> OneHotEncoderEstimator: create
+pipeline_SparkLoadDecisionTree -> VectorAssembler: create
+pipeline_SparkLoadDecisionTree -> StandardScaler: create
+pipeline_SparkLoadDecisionTree -> DecisionTreeClassifier: create
+pipeline_SparkLoadDecisionTree -> Pipeline: create
+pipeline_SparkLoadDecisionTree -> Pipeline: setStages(StringIndexer, OneHotEncoder, VectorAssember, StandardScalar, DecisionTreeClassifier)
+pipeline_SparkLoadDecisionTree -> Pipeline: fit(trainingSet)
+pipeline_SparkLoadDecisionTree <- PipelineModel: model
+pipeline_SparkLoadDecisionTree -> PipelineModel: transform(training)
+pipeline_SparkLoadDecisionTree <- PipelineModel: DataSet() training prediction
+pipeline_SparkLoadDecisionTree -> PipelineModel: transform(test)
+pipeline_SparkLoadDecisionTree <- PipelineModel: DataSet() test prediction
+@enduml
