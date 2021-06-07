@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="907.0" y="165.0">org.apache.spark.ml.classification.DecisionTreeClassifier</node>
+    <node x="389.0" y="267.0">org.apache.spark.ml.PipelineModel</node>
+    <node x="879.0" y="620.0">org.apache.spark.ml.feature.StandardScaler</node>
+    <node x="526.0" y="0.0">org.apache.spark.ml.feature.StopWordsRemover</node>
+    <node x="498.0" y="706.0">org.apache.spark.ml.feature.PCA</node>
+    <node x="385.0" y="513.0">q2.SparkLoadDecisionTreeAIGNewsWithPCA</node>
+    <node x="143.0" y="681.0">org.apache.spark.ml.feature.IDF</node>
+    <node x="182.0" y="473.0">org.apache.spark.ml.feature.RegexTokenizer</node>
+    <node x="0.0" y="420.0">org.apache.spark.ml.feature.HashingTF</node>
+    <node x="154.0" y="186.0">org.apache.spark.ml.feature.VectorAssembler</node>
+    <node x="309.0" y="873.0">org.apache.spark.ml.feature.StringIndexer</node>
+    <node x="597.0" y="292.0">org.apache.spark.ml.Pipeline</node>
+    <node x="616.0" y="928.0">org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator</node>
+    <node x="754.0" y="523.0">org.apache.spark.sql.SparkSession</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.RegexTokenizer">
+      <point x="0.07865930893632722" y="4.499312471157971" />
+      <point x="0.07865930893632367" y="4.499312471157971" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.VectorAssembler">
+      <point x="-3.428648126931325" y="3.639281800258164" />
+      <point x="-3.428648126931307" y="3.639281800258175" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.PCA">
+      <point x="4.986843529027389" y="-0.3624798159865712" />
+      <point x="4.9868435290273885" y="-0.36247981598657475" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.StringIndexer">
+      <point x="4.675449485709397" y="1.7720530766824503" />
+      <point x="4.675449485709407" y="1.7720530766824254" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.StandardScaler">
+      <point x="-14.383841975365947" y="0.0" />
+      <point x="0.0" y="5.332546293306393" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.IDF">
+      <point x="2.562212118117177" y="4.293607930607251" />
+      <point x="2.562212118117202" y="4.293607930607266" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.sql.SparkSession">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.classification.DecisionTreeClassifier">
+      <point x="-2.251253399952464" y="-4.4645109619310475" />
+      <point x="-2.251253399952475" y="-4.464510961931069" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.StopWordsRemover">
+      <point x="-4.950179815231152" y="-0.7040737155142764" />
+      <point x="-4.950179815231152" y="-0.7040737155142551" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.feature.HashingTF">
+      <point x="-0.4959839675773665" y="4.975339174760471" />
+      <point x="-0.49598396757738783" y="4.975339174760471" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator">
+      <point x="4.49918688159341" y="-2.1811275534681087" />
+      <point x="4.499186881593403" y="-2.181127553468116" />
+    </edge>
+    <edge source="q2.SparkLoadDecisionTreeAIGNewsWithPCA" target="org.apache.spark.ml.Pipeline">
+      <point x="-4.2228771830555125" y="-2.6771829031332786" />
+      <point x="-4.222877183055516" y="-2.6771829031332857" />
+    </edge>
+    <edge source="org.apache.spark.ml.Pipeline" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal" zoom="1.0" x="473.0" y="565.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

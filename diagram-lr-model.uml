@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="191.0" y="0.0">org.apache.spark.ml.feature.VectorAssembler</node>
+    <node x="0.0" y="71.0">org.apache.spark.ml.feature.OneHotEncoderEstimator</node>
+    <node x="28.0" y="247.0">org.apache.spark.ml.feature.StringIndexer</node>
+    <node x="111.0" y="161.0">q1.pipeline_SparkLoadLinearRegression</node>
+    <node x="337.0" y="73.0">org.apache.spark.ml.feature.StandardScaler</node>
+    <node x="142.0" y="379.0">org.apache.spark.ml.PipelineModel</node>
+    <node x="278.0" y="308.0">org.apache.spark.ml.Pipeline</node>
+    <node x="353.0" y="232.0">org.apache.spark.ml.classification.LogisticRegression</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.classification.LogisticRegression">
+      <point x="-13.49561119488507" y="0.0" />
+      <point x="-13.495611194885072" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.feature.VectorAssembler">
+      <point x="5.00154291228359" y="0.0" />
+      <point x="5.001542912283591" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.feature.StringIndexer">
+      <point x="-10.921105788771587" y="0.0" />
+      <point x="-10.92110578877157" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.feature.OneHotEncoderEstimator">
+      <point x="10.150259985723405" y="0.0" />
+      <point x="10.150259985723409" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.Pipeline">
+      <point x="-5.439837932759935" y="0.0" />
+      <point x="-5.439837932759943" y="0.0" />
+    </edge>
+    <edge source="org.apache.spark.ml.Pipeline" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q1.pipeline_SparkLoadLinearRegression" target="org.apache.spark.ml.feature.StandardScaler">
+      <point x="9.685791971527287" y="0.0" />
+      <point x="9.685791971527294" y="-1.4210854715202004E-14" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal" zoom="1.0" x="233.0" y="146.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

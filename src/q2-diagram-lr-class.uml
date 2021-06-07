@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="176.0" y="324.0">org.apache.spark.ml.PipelineModel</node>
+    <node x="318.0" y="500.0">org.apache.spark.ml.feature.StandardScaler</node>
+    <node x="676.0" y="252.0">org.apache.spark.ml.feature.StopWordsRemover</node>
+    <node x="125.0" y="488.0">org.apache.spark.ml.feature.PCA</node>
+    <node x="558.0" y="466.0">org.apache.spark.ml.feature.IDF</node>
+    <node x="267.0" y="162.0">org.apache.spark.ml.feature.RegexTokenizer</node>
+    <node x="0.0" y="327.0">org.apache.spark.ml.feature.HashingTF</node>
+    <node x="215.0" y="23.0">org.apache.spark.ml.feature.VectorAssembler</node>
+    <node x="519.0" y="622.0">org.apache.spark.ml.feature.StringIndexer</node>
+    <node x="219.0" y="395.0">q2.SparkLoadLinearRegressionAIGNewsWithPCA</node>
+    <node x="57.0" y="199.0">org.apache.spark.ml.Pipeline</node>
+    <node x="424.0" y="0.0">org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator</node>
+    <node x="130.0" y="661.0">org.apache.spark.ml.classification.LogisticRegression</node>
+    <node x="470.0" y="279.0">org.apache.spark.sql.SparkSession</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.PCA">
+      <point x="2.619336298568925" y="4.258999572082541" />
+      <point x="2.619336298568925" y="4.258999572082544" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.RegexTokenizer">
+      <point x="-4.825591723879178" y="1.30907009530765" />
+      <point x="-4.825591723879171" y="1.3090700953076464" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.IDF">
+      <point x="2.1029082301516517" y="-4.536273467898564" />
+      <point x="2.1029082301516553" y="-4.5362734678985674" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.VectorAssembler">
+      <point x="5.214239995343149" y="0.0" />
+      <point x="5.214239995343135" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.StringIndexer">
+      <point x="-6.277681185021258" y="0.0" />
+      <point x="-6.277681185021265" y="2.8421709430404007E-14" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.Pipeline">
+      <point x="-2.906938149572447" y="4.0681335517114405" />
+      <point x="-2.906938149572454" y="4.0681335517114405" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.StopWordsRemover">
+      <point x="-1.1593035965177378" y="-4.8637449738962495" />
+      <point x="-1.1593035965177592" y="-4.863744973896246" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.StandardScaler">
+      <point x="4.999888892592455" y="0.03333259261728472" />
+      <point x="4.999888892592455" y="0.03333259261728472" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.sql.SparkSession">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.classification.LogisticRegression">
+      <point x="4.767587913147246" y="1.506686925148113" />
+      <point x="4.767587913147253" y="1.5066869251481307" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator">
+      <point x="-4.441266757713976" y="-2.2967693804177998" />
+      <point x="-4.441266757713976" y="-2.2967693804177998" />
+    </edge>
+    <edge source="org.apache.spark.ml.Pipeline" target="org.apache.spark.ml.PipelineModel">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="q2.SparkLoadLinearRegressionAIGNewsWithPCA" target="org.apache.spark.ml.feature.HashingTF">
+      <point x="0.0" y="-4.510818060683146" />
+      <point x="0.0" y="-4.5108180606831425" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal" zoom="1.0" x="473.0" y="428.5" />
+  <SelectedNodes>
+    <node>org.apache.spark.ml.feature.PCA</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
