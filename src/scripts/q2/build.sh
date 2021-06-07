@@ -22,7 +22,11 @@ jar cvf ${script_dir}/q2/skdd_dt.jar -C ${class_dir}_dt/ .
 rm -r ${class_dir}_lr_pca
 mkdir ${class_dir}_lr_pca
 rm ${script_dir}/q2/skdd_lr_pca.jar
-javac -cp "$lib_dir/jars/*" -d ${class_dir}_lr_pca $src_dir/q2/SparkLoadLinearRegressionWithPCA.java
+javac -cp "$lib_dir/jars/*" -d ${class_dir}_lr_pca $src_dir/q2/SparkLoadLinearRegressionAIGNewsWithPCA.java
 jar cvf ${script_dir}/q2/skdd_lr_pca.jar -C ${class_dir}_lr_pca/ .
 
-
+rm -r ${class_dir}_dt_pca
+mkdir ${class_dir}_dt_pca
+rm ${script_dir}/q2/skdd_dt_pca.jar
+javac -cp "$lib_dir/jars/*" -d ${class_dir}_dt_pca $src_dir/q2/SparkLoadDecisionTreeAIGNewsWithPCA.java
+jar cvf ${script_dir}/q2/skdd_dt_pca.jar -C ${class_dir}_dt_pca/ .
