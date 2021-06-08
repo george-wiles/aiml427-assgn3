@@ -40,9 +40,9 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		int numFeatures = Integer.parseInt(args[3]);
 		String pca = args[4];
 		int numPCAFeatures = Integer.parseInt(args[5]);
-		Boolean useScalar = Boolean.getBoolean(args[6]);
+		int useScalar = Integer.parseInt(args[6]);
 
-		System.out.println(String.format("appName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeature=%d\n useScalar=%s\n",
+		System.out.println(String.format("appName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeature=%d\n useScalar=%d\n",
 				appName,
 				algorithm,
 				trainingFile,
@@ -51,7 +51,7 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 				numFeatures,
 				pca,
 				numPCAFeatures,
-				useScalar.toString()));
+				useScalar));
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
@@ -166,7 +166,7 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		} else {
 			stages.add(vectorAssembler);
 		}
-		if (useScalar) {
+		if (useScalar == 1) {
 			StandardScaler scaler = new StandardScaler()
 					.setInputCol("features")
 					.setOutputCol("scaledFeatures")

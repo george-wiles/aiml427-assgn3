@@ -6,7 +6,7 @@ appName=q2.George_SparkLoadLinearRegression,
  features=1000,
  pca=NO_PCA,
  pcaFeature=0
- useScalar=false
+ useScalar=0
 
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|            features|       rawPrediction|         probability|prediction|

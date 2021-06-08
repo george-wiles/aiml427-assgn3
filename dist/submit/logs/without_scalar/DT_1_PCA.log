@@ -9,7 +9,7 @@ appName=q2.George_SparkLoad_DecisionTree,
  pca=PCA,
  pcaFeatures=12
  treeDepth=12
-, useScalar=false
+ useScalar=0
 
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|     sw_pca_features|     tw_pca_features|            features|       rawPrediction|         probability|prediction|
