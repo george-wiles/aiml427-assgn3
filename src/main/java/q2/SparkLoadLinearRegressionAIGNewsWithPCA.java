@@ -14,6 +14,12 @@ import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import static java.lang.System.exit;
 
 public class SparkLoadLinearRegressionAIGNewsWithPCA {
@@ -22,8 +28,10 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		String appName = "q2.George_SparkLoadLinearRegression";
 		String algorithm = "LinearRegression";
 
-		if (args.length != 6) {
-			System.out.println("Usage: training test seed features PCA PCA-count");
+		LocalDateTime start = LocalDateTime.now();
+
+		if (args.length != 7) {
+			System.out.println("Usage: training test seed features PCA PCA-count scalar");
 			exit(0);
 		}
 		String trainingFile = args[0];
@@ -32,8 +40,9 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		int numFeatures = Integer.parseInt(args[3]);
 		String pca = args[4];
 		int numPCAFeatures = Integer.parseInt(args[5]);
+		Boolean useScalar = Boolean.getBoolean(args[6]);
 
-		System.out.println(String.format("appName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeature=%d\n",
+		System.out.println(String.format("appName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeature=%d\n useScalar=%s\n",
 				appName,
 				algorithm,
 				trainingFile,
@@ -41,7 +50,8 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 				randomSeed,
 				numFeatures,
 				pca,
-				numPCAFeatures));
+				numPCAFeatures,
+				useScalar.toString()));
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
@@ -122,38 +132,19 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 				.setInputCols(new String[] {"tw_idf_features", "sw_idf_features"})
 				.setOutputCol("features");
 
-		StandardScaler scaler = new StandardScaler()
-				.setInputCol("features")
-				.setOutputCol("scaledFeatures")
-				.setWithStd(true)
-				.setWithMean(true);
-
-		LogisticRegression lr = new LogisticRegression()
-				.setMaxIter(300) //Set maximum iterations
-				.setFeaturesCol("scaledFeatures")
-				.setLabelCol("indexedLabel");
-
-		Pipeline pipeline =
-				new Pipeline()
-						.setStages(new PipelineStage[] {
-								labelIndexer,
-								// SENTENCE
-//								sentenceTokenizer,
-								sentenceRegexTokenizer,
-								swStopRemover,
-								sentenceHashing,
-								sentenceIdf,
-								// TITLE
-//								titleTokenizer,
-								titleRegexTokenizer,
-								twStopRemover,
-								titleHashing,
-								titleIdf,
-								// COMBINE
-								vectorAssembler,
-								scaler,
-								lr
-						});
+		List<PipelineStage> stages = new LinkedList<>();
+		stages.add(labelIndexer);
+		// SENTENCE
+		stages.add(sentenceRegexTokenizer);
+		stages.add(swStopRemover);
+		stages.add(sentenceHashing);
+		stages.add(sentenceIdf);
+		// TITLE
+		stages.add(titleRegexTokenizer);
+		stages.add(twStopRemover);
+		stages.add(titleHashing);
+		stages.add(titleIdf);
+		// COMBINE
 		if (pca.equals("PCA")) {
 			PCA titlePca = new PCA()
 					.setInputCol("tw_idf_features")
@@ -168,32 +159,39 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 			VectorAssembler vectorAssemblerPCA = new VectorAssembler()
 					.setInputCols(new String[] {"tw_pca_features", "sw_pca_features"})
 					.setOutputCol("features");
-			pipeline =
-					new Pipeline()
-							.setStages(new PipelineStage[] {
-									labelIndexer,
-									// SENTENCE
-//									sentenceTokenizer,
-									sentenceRegexTokenizer,
-									swStopRemover,
-									sentenceHashing,
-									sentenceIdf,
-									// TITLE
-//									titleTokenizer,
-									titleRegexTokenizer,
-									twStopRemover,
-									titleHashing,
-									titleIdf,
-									// COMBINE
-									sentencePca,
-									titlePca,
-									vectorAssemblerPCA,
-									scaler,
-									lr
-							});
 
+			stages.add(sentencePca);
+			stages.add(titlePca);
+			stages.add(vectorAssemblerPCA);
+		} else {
+			stages.add(vectorAssembler);
+		}
+		if (useScalar) {
+			StandardScaler scaler = new StandardScaler()
+					.setInputCol("features")
+					.setOutputCol("scaledFeatures")
+					.setWithStd(true)
+					.setWithMean(true);
+
+			LogisticRegression lr = new LogisticRegression()
+					.setMaxIter(300) //Set maximum iterations
+					.setFeaturesCol("scaledFeatures")
+					.setLabelCol("indexedLabel");
+
+			stages.add(scaler);
+			stages.add(lr);
+		} else {
+			LogisticRegression lr = new LogisticRegression()
+					.setMaxIter(300) //Set maximum iterations
+					.setFeaturesCol("features")
+					.setLabelCol("indexedLabel");
+			stages.add(lr);
 		}
 
+		PipelineStage[] stageArray = stages.toArray(new PipelineStage[stages.size()]);
+		System.err.println("stages=" + Arrays.toString(stageArray));
+
+		Pipeline pipeline = new Pipeline().setStages(stageArray);
 		PipelineModel pipelineModel = pipeline.fit(trainingSet);
 		Dataset<Row> predictions_training = pipelineModel.transform(trainingSet);
 		predictions_training.show();
@@ -209,6 +207,12 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		Dataset<Row> predictions_test = pipelineModel.transform(testSet);
 		double accuracy_test = evaluator.evaluate(predictions_test);
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
+
+		LocalDateTime end = LocalDateTime.now();
+		System.out.println("Start Time = " + start);
+		System.out.println("End Time = " + end);
+		System.out.println("Elapsed Time = " + Duration.between(start, end));
+
 	}
 }
 
