@@ -146,6 +146,7 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		stages.add(titleIdf);
 		// COMBINE
 		if (pca.equals("PCA")) {
+			System.out.println("PCA = true");
 			PCA titlePca = new PCA()
 					.setInputCol("tw_idf_features")
 					.setOutputCol("tw_pca_features")
@@ -164,9 +165,11 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 			stages.add(titlePca);
 			stages.add(vectorAssemblerPCA);
 		} else {
+			System.out.println("PCA = false");
 			stages.add(vectorAssembler);
 		}
 		if (useScalar == 1) {
+			System.out.println("SCALAR = true");
 			StandardScaler scaler = new StandardScaler()
 					.setInputCol("features")
 					.setOutputCol("scaledFeatures")
@@ -181,6 +184,7 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 			stages.add(scaler);
 			stages.add(lr);
 		} else {
+			System.out.println("SCALAR = false");
 			LogisticRegression lr = new LogisticRegression()
 					.setMaxIter(300) //Set maximum iterations
 					.setFeaturesCol("features")
@@ -209,8 +213,6 @@ public class SparkLoadLinearRegressionAIGNewsWithPCA {
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
 
 		LocalDateTime end = LocalDateTime.now();
-		System.out.println("Start Time = " + start);
-		System.out.println("End Time = " + end);
 		System.out.println("Elapsed Time = " + Duration.between(start, end));
 
 	}

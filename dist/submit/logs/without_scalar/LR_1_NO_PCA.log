@@ -1,3 +1,5 @@
+http://co246a-2.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_1749_01_000001/wilesgeor/stdout/?start=0
+
 appName=q2.George_SparkLoadLinearRegression,
  algorithm=LinearRegression,
  train=resources/kaggle-news-train.csv,
@@ -8,6 +10,8 @@ appName=q2.George_SparkLoadLinearRegression,
  pcaFeature=0
  useScalar=0
 
+PCA = false
+SCALAR = false
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|            features|       rawPrediction|         probability|prediction|
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
@@ -36,6 +40,4 @@ only showing top 20 rows
 
 Training Error = 0.1684916666666667
 Test Error = 0.1919736842105263
-Start Time = 2021-06-08T19:28:06.647
-End Time = 2021-06-08T19:28:57.233
-Elapsed Time = PT50.586S
+Elapsed Time = PT1M2.466S

@@ -8,6 +8,8 @@ appName=q2.George_SparkLoadLinearRegression,
  pcaFeature=0
  useScalar=1
 
+PCA = false
+SCALAR = true
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|            features|      scaledFeatures|       rawPrediction|         probability|prediction|
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
@@ -36,6 +38,4 @@ only showing top 20 rows
 
 Training Error = 0.16840833333333338
 Test Error = 0.1919736842105263
-Start Time = 2021-06-08T19:57:07.884
-End Time = 2021-06-08T20:02:38.221
-Elapsed Time = PT5M30.337S
+Elapsed Time = PT5M33.932S

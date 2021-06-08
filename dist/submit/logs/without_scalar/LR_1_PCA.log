@@ -1,4 +1,4 @@
-http://co246a-6.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_1725_01_000001/wilesgeor/stdout/?start=0
+http://co246a-6.ecs.vuw.ac.nz:8042/node/containerlogs/container_1617755808746_1746_01_000001/wilesgeor/stdout/?start=0
 
 appName=q2.George_SparkLoadLinearRegression,
  algorithm=LinearRegression,
@@ -10,6 +10,8 @@ appName=q2.George_SparkLoadLinearRegression,
  pcaFeature=12
  useScalar=0
 
+PCA = true
+SCALAR = false
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|     sw_pca_features|     tw_pca_features|            features|       rawPrediction|         probability|prediction|
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
@@ -38,7 +40,4 @@ only showing top 20 rows
 
 Training Error = 0.28485000000000005
 Test Error = 0.2896052631578947
-
-Start Time = 2021-06-08T19:24:33.311
-End Time = 2021-06-08T19:25:33.172
-Elapsed Time = PT59.861S
+Elapsed Time = PT54.63S

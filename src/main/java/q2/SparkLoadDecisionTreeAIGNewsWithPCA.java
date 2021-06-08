@@ -41,10 +41,10 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 		String pca = args[4];
 		int numPCAFeatures = Integer.parseInt(args[5]);
 		int treeMaxDepth = Integer.parseInt(args[6]);
-		Boolean useScalar = Boolean.getBoolean(args[7]);
+		int useScalar = Integer.parseInt(args[7]);
 
 		System.out.println(
-				String.format("\nappName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeatures=%d\n treeDepth=%d\n, useScalar=%s\n",
+				String.format("\nappName=%s,\n algorithm=%s,\n train=%s,\n test=%s,\n seed=%d,\n features=%d,\n pca=%s,\n pcaFeatures=%d\n treeDepth=%d\n, useScalar=%d\n",
 				appName,
 				algorithm,
 				trainingFile,
@@ -54,7 +54,7 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 				pca,
 				numPCAFeatures,
 				treeMaxDepth,
-				useScalar.toString()));
+				useScalar));
 
 		SparkSession spark = SparkSession.builder()
 				.appName(appName)
@@ -131,6 +131,7 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 		stages.add(titleIdf);
 		// COMBINE
 		if (pca.equals("PCA")) {
+			System.out.println("PCA = true");
 			PCA titlePca = new PCA()
 					.setInputCol("tw_idf_features")
 					.setOutputCol("tw_pca_features")
@@ -149,9 +150,11 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 			stages.add(titlePca);
 			stages.add(vectorAssemblerPCA);
 		} else {
+			System.out.println("PCA = false");
 			stages.add(vectorAssembler);
 		}
-		if (useScalar) {
+		if (useScalar == 1) {
+			System.out.println("SCALAR = true");
 			StandardScaler scaler = new StandardScaler()
 					.setInputCol("features")
 					.setOutputCol("scaledFeatures")
@@ -164,6 +167,7 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 			stages.add(scaler);
 			stages.add(dt);
 		} else {
+			System.out.println("SCALAR = false");
 			DecisionTreeClassifier dt = new DecisionTreeClassifier()
 					.setFeaturesCol("features")
 					.setLabelCol("indexedLabel").setMaxDepth(treeMaxDepth);
@@ -191,8 +195,6 @@ public class SparkLoadDecisionTreeAIGNewsWithPCA {
 		System.out.println("Test Error = " + (1.0 - accuracy_test));
 
 		LocalDateTime end = LocalDateTime.now();
-		System.out.println("Start Time = " + start);
-		System.out.println("End Time = " + end);
 		System.out.println("Elapsed Time = " + Duration.between(start, end));
 
 	}

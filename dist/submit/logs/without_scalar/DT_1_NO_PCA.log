@@ -9,8 +9,10 @@ appName=q2.George_SparkLoad_DecisionTree,
  pca=NO_PCA,
  pcaFeatures=0
  treeDepth=12
- useScalar=0
+, useScalar=0
 
+PCA = false
+SCALAR = false
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
 |Class Index|               Title|         Description|indexedLabel|sentence_words_clean| sentence_stop_words|      sw_rawFeatures|     sw_idf_features|   title_words_clean|    title_stop_words|      tw_rawFeatures|     tw_idf_features|            features|       rawPrediction|         probability|prediction|
 +-----------+--------------------+--------------------+------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+----------+
@@ -39,6 +41,4 @@ only showing top 20 rows
 
 Training Error = 0.5137
 Test Error = 0.5255263157894736
-Start Time = 2021-06-08T19:26:56.730
-End Time = 2021-06-08T19:27:51.637
-Elapsed Time = PT54.907S
+Elapsed Time = PT57.291S
