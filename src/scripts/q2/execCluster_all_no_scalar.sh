@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for randomSeed in 1 # 2 # 3 4 5 6 7 8 9 10 1
+for randomSeed in 1 2 # 3 4 5 6 7 8 9 10 1
 do
   echo "Submitting aig-news logistic regression and Decision Tree to cluster with random seed $randomSeed"
   sleep 3
